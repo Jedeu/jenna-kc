@@ -399,6 +399,7 @@ p {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
+  font-size: 1.125em;
 }
 pre {
   margin-left: 0;
@@ -595,8 +596,4 @@ pre tt:after {
   html {
     font-size: 100%;
   }
-}
-.active {
-  text-decoration: underline #F5B4A2;
-  text-decoration-thickness: 2px;
 }

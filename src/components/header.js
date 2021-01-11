@@ -11,7 +11,7 @@ const StyledHeader = styled.header`
 `;
 
 const StyledLinksContainer = styled.div`
-  & a:first-child {
+  & a:nth-child(2) {
     margin-right: 40px;
   }
 `;
@@ -24,22 +24,26 @@ const StyledLink = styled(Link)`
 
 const Header = () => (
   <StyledHeader>
-    <StyledLink to='/' style={{ minWidth: '85px' }}>
+    <StyledLink to='/work' style={{ minWidth: '85px' }}>
       <Logo  />
     </StyledLink>
     <StyledLinksContainer>
       <StyledLink
-        to='/'
-        activeStyle={{ textDecoration: 'underline #F5B4A2', textDecorationThickness: '2px' }}
+        to='/work'
+        activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
+        partiallyActive={true}
       >
-        Work &mdash;
+        Work
       </StyledLink>
+      <StyledLink to='/work'> &mdash;</StyledLink>
+
       <StyledLink
         to='/about'
-        activeStyle={{ textDecoration: 'underline #F5B4A2', textDecorationThickness: '2px' }}
+        activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
       >
-        About &mdash;
+        About
       </StyledLink>
+      <StyledLink to='/about'> &mdash;</StyledLink>
     </StyledLinksContainer>
   </StyledHeader>
 )
