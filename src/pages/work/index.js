@@ -43,7 +43,7 @@ const Work = () => {
           }
         }
       }
-      eatingForMe: file(relativePath: { eq: "eating-4-me.png" }) {
+      neighbourhood: file(relativePath: { eq: "neighbourhood.png" }) {
         childImageSharp {
           fixed(width: 560, height: 420) {
             ...GatsbyImageSharpFixed
@@ -81,15 +81,16 @@ const Work = () => {
       <PicParagraphContainer>
         <StyledDescription>
           <p>
-            Eating4Me was a project aimed to provide access to food and nutrition specialists through a directory website
-            that made it easy for users to find what they needed based on their dietary needs
+            Neighbourhood was a project aimed to combat senior loneliness by providing a social platform where seniors could group for activities
+            for a period of time. During that period, the community that was doing the same activity could communicate and share their progress,
+            thus creating a community within Neighbourhood.
           </p>
           <p>
             This was a personal project that... (WRITE-UP NOT FINISHED)
           </p>
-          <StyledLink to='/eating4me'>Read more about Eating4Me</StyledLink>
+          <StyledLink to='/neighbourhood'>Read more about Neighbourhood</StyledLink>
         </StyledDescription>
-        <Img fixed={coverImgs.eatingForMe.childImageSharp.fixed}/>
+        <Img fixed={coverImgs.neighbourhood.childImageSharp.fixed}/>
       </PicParagraphContainer>
       <PicParagraphContainer>
         <Img fixed={coverImgs.electronicArts.childImageSharp.fixed}/>

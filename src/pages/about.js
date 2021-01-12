@@ -18,7 +18,7 @@ const StyledDescription = styled.div`
 const About = () => {
   const imgQuery = useStaticQuery(graphql`
     query {
-      profileImg: file(relativePath: { eq: "mediavalet.png" }) {
+      profileImg: file(relativePath: { eq: "profile.png" }) {
         childImageSharp {
           fixed(width: 500, height: 375) {
             ...GatsbyImageSharpFixed

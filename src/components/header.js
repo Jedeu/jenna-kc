@@ -28,7 +28,7 @@ const Header = () => (
       <Logo  />
     </StyledLink>
     <StyledLinksContainer>
-      <StyledLink
+    <StyledLink
         to='/work'
         activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
         partiallyActive={true}
