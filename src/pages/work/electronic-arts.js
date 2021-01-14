@@ -9,13 +9,16 @@ import ImageWithCaption from '../../components/ImageWithCaption'
 
 const StyledImagesContainer = styled.div`
   display: flex;
-  gap: 2.5em;
-  margin-top: 40px;
+  margin-bottom: 40px;
   flex-wrap: wrap;
+
+  & > div:nth-child(2) {
+    margin-left: 2.5em;
+  }
 `;
 
 const StyledParagraph = styled.p`
-  margin-top: 40px;
+  margin-bottom: 2.5em;
 `;
 
 const StyledContentContainer = styled.div`
@@ -56,7 +59,7 @@ const MediaValet = () => {
         </Link>
         <span style={{ fontSize: '1.5em' }}>Electronic Arts</span>
         <span style={{ fontSize: '1.125em', marginLeft: '16px' }}>Junior Web Designer</span>
-        <StyledImagesContainer>
+        <StyledImagesContainer style={{ marginTop: '2.5em' }}>
           <ImageWithCaption
             source={imgQuery.placeholder.childImageSharp.fixed}
             content='Description of what this photo is'
@@ -89,8 +92,8 @@ const MediaValet = () => {
             backgrounds for the game.
           </StyledParagraph>
 
+          <div style={{ fontWeight: 'bold', marginTop: '40px' }}>Photoshop and Illustrator</div>
           <StyledParagraph>
-            <div style={{ fontWeight: 'bold', marginTop: '40px' }}>Photoshop and Illustrator</div>
             Often, some of the assets for the games were missing or did not look the way they should for how it will be
             used in the website. In these cases, I retouched or recreated these assets using Photoshop and Illustrator. I had
             mainly used Sketch up to this point and was very unfamiliar with the Adobe apps. I had to learn and learn quickly.
@@ -117,8 +120,8 @@ const MediaValet = () => {
           />
         </StyledImagesContainer>
         <StyledContentContainer>
+          <div style={{ fontWeight: 'bold', marginTop: '40px' }}>Eye for Detail</div>
           <StyledParagraph>
-            <div style={{ fontWeight: 'bold', marginTop: '40px' }}>Eye for Detail</div>
             When I first started, I frequently had to redo my work because I would misplace an image on the artboard by a pixel or
             two. Eye for detail and being pixel perfect was something I knew was important as a designer but this was my first time
             seeing it in practice.

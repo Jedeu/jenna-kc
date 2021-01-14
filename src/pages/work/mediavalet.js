@@ -9,13 +9,20 @@ import ImageWithCaption from '../../components/ImageWithCaption'
 
 const StyledImagesContainer = styled.div`
   display: flex;
-  gap: 2.5em;
-  margin-top: 40px;
+  margin-bottom: 2.5em;
   flex-wrap: wrap;
+
+  & > div:nth-child(2) {
+    margin-left: 2.5em;
+  }
+
+  & > div:nth-child(5) {
+    margin-left: 2.5em;
+  }
 `;
 
 const StyledParagraph = styled.p`
-  margin-top: 40px;
+  margin-bottom: 2.5em;
 `;
 
 const StyledContentContainer = styled.div`
@@ -25,6 +32,8 @@ const StyledContentContainer = styled.div`
     max-width: 80%;
     font-size: 1.125em;
   }
+
+  padding-bottom: 2.5em;
 `
 
 const MediaValet = () => {
@@ -105,7 +114,7 @@ const MediaValet = () => {
         </Link>
         <span style={{ fontSize: '1.5em' }}>MediaValet</span>
         <span style={{ fontSize: '1.125em', marginLeft: '16px' }}>Product Designer</span>
-        <StyledImagesContainer>
+        <StyledImagesContainer style={{ marginTop: '2.5em'}}>
           <ImageWithCaption
             source={imgQuery.placeholder.childImageSharp.fixed}
             content='Description of what this photo is'
@@ -198,7 +207,7 @@ const MediaValet = () => {
             content='An example of low fidelity prototype. The cutouts were used to show hover states.'
             screenshot
           />
-          <div style={{ flexBasis: '100%', height: 0 }}></div>
+          <div style={{ flexBasis: '100%', height: '25px' }}></div>
           <ImageWithCaption
             source={imgQuery.placeholder.childImageSharp.fixed}
             content='How Branded Portal was presented in design reviews'
@@ -218,7 +227,7 @@ const MediaValet = () => {
             developer hand off process.
           </StyledParagraph>
         </StyledContentContainer>
-        <StyledImagesContainer style={{ gap: '1em' }}>
+        <StyledImagesContainer>
           <ImageWithCaption
             source={imgQuery.emptyPortal.childImageSharp.fixed}
             content='Description of what this photo is'
@@ -229,7 +238,7 @@ const MediaValet = () => {
             content='We were about to present'
             screenshot
           />
-          <div style={{ flexBasis: '100%', height: 0 }}></div>
+          <div style={{ flexBasis: '100%', height: '25px' }}></div>
           <ImageWithCaption
             source={imgQuery.noAssets.childImageSharp.fixed}
             content='Description of what this photo is'

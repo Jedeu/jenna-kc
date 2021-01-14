@@ -13,7 +13,7 @@ const StyledImage = styled(Img)`
     content: "";
     position: absolute;
     width: 100%;
-    height: 1px;
+    height: 2px;
     bottom: 0;
     background-image: linear-gradient(to right, #F5B4A2 70%, #B7B7B7 30%)
   }`}
