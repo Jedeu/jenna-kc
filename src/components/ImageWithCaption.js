@@ -9,11 +9,11 @@ const StyledImage = styled(Img)`
   display: inline-block;
   border-bottom: none;
 
-  ${(screenshot) => screenshot && `&:after {
+  ${({ screenshot }) => screenshot && `&:after {
     content: "";
     position: absolute;
     width: 100%;
-    height: 2px;
+    height: 1px;
     bottom: 0;
     background-image: linear-gradient(to right, #F5B4A2 70%, #B7B7B7 30%)
   }`}
