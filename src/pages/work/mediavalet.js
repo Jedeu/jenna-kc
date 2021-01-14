@@ -37,6 +37,55 @@ const MediaValet = () => {
           }
         }
       }
+      aboutToPresent: file(relativePath: { eq: "mediavalet-present.png" }) {
+        childImageSharp {
+          fixed(width: 480, height: 360) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      shareAssets: file(relativePath: { eq: "mediavalet-share-assets.png" }) {
+        childImageSharp {
+          fixed(width: 480, height: 360) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      gallery: file(relativePath: { eq: "mediavalet-gallery.png" }) {
+        childImageSharp {
+          fixed(width: 480, height: 360) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      lofi: file(relativePath: { eq: "mediavalet-lo-fi.png" }) {
+        childImageSharp {
+          fixed(width: 480, height: 360) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      emptyPortal: file(relativePath: { eq: "mediavalet-empty-portal.png" }) {
+        childImageSharp {
+          fixed(width: 480, height: 360) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      portalSettings: file(relativePath: { eq: "mediavalet-portal-settings.png" }) {
+        childImageSharp {
+          fixed(width: 480, height: 360) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      noAssets: file(relativePath: { eq: "mediavalet-no-assets.png" }) {
+        childImageSharp {
+          fixed(width: 480, height: 360) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
       chevron: file(relativePath: { eq: "vector.png" }) {
           childImageSharp {
               fixed(width: 8, height: 20) {
@@ -60,9 +109,10 @@ const MediaValet = () => {
           <ImageWithCaption
             source={imgQuery.placeholder.childImageSharp.fixed}
             content='Description of what this photo is'
+            screenshot
           />
           <ImageWithCaption
-            source={imgQuery.placeholder.childImageSharp.fixed}
+            source={imgQuery.aboutToPresent.childImageSharp.fixed}
             content='We were about to present'
           />
         </StyledImagesContainer>
@@ -101,12 +151,14 @@ const MediaValet = () => {
         </StyledContentContainer>
         <StyledImagesContainer>
           <ImageWithCaption
-            source={imgQuery.placeholder.childImageSharp.fixed}
-            content='Description of what this photo is'
+            source={imgQuery.shareAssets.childImageSharp.fixed}
+            content='What the set up for Web Galleries looked like'
+            screenshot
           />
           <ImageWithCaption
-            source={imgQuery.placeholder.childImageSharp.fixed}
-            content='We were about to present'
+            source={imgQuery.gallery.childImageSharp.fixed}
+            content='What users would see once the Web Gallery was shared'
+            screenshot
           />
         </StyledImagesContainer>
         <StyledContentContainer>
@@ -137,21 +189,25 @@ const MediaValet = () => {
         </StyledContentContainer>
         <StyledImagesContainer>
           <ImageWithCaption
-            source={imgQuery.placeholder.childImageSharp.fixed}
-            content='Description of what this photo is'
+            source={imgQuery.lofi.childImageSharp.fixed}
+            content='An example of a low fidelity prototype. It’s a messy process at the beginning.'
+            screenshot
           />
           <ImageWithCaption
             source={imgQuery.placeholder.childImageSharp.fixed}
-            content='We were about to present'
+            content='An example of low fidelity prototype. The cutouts were used to show hover states.'
+            screenshot
           />
           <div style={{ flexBasis: '100%', height: 0 }}></div>
           <ImageWithCaption
             source={imgQuery.placeholder.childImageSharp.fixed}
-            content='Description of what this photo is'
+            content='How Branded Portal was presented in design reviews'
+            screenshot
           />
           <ImageWithCaption
             source={imgQuery.placeholder.childImageSharp.fixed}
-            content='We were about to present'
+            content='Description of what this photo is'
+            screenshot
           />
         </StyledImagesContainer>
         <StyledContentContainer>
@@ -162,23 +218,27 @@ const MediaValet = () => {
             developer hand off process.
           </StyledParagraph>
         </StyledContentContainer>
-        <StyledImagesContainer>
+        <StyledImagesContainer style={{ gap: '1em' }}>
           <ImageWithCaption
-            source={imgQuery.placeholder.childImageSharp.fixed}
+            source={imgQuery.emptyPortal.childImageSharp.fixed}
             content='Description of what this photo is'
+            screenshot
           />
           <ImageWithCaption
-            source={imgQuery.placeholder.childImageSharp.fixed}
+            source={imgQuery.portalSettings.childImageSharp.fixed}
             content='We were about to present'
+            screenshot
           />
           <div style={{ flexBasis: '100%', height: 0 }}></div>
           <ImageWithCaption
-            source={imgQuery.placeholder.childImageSharp.fixed}
+            source={imgQuery.noAssets.childImageSharp.fixed}
             content='Description of what this photo is'
+            screenshot
           />
           <ImageWithCaption
             source={imgQuery.placeholder.childImageSharp.fixed}
             content='We were about to present'
+            screenshot
           />
         </StyledImagesContainer>
         <StyledContentContainer>

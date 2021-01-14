@@ -88,7 +88,7 @@ const Work = () => {
           <p>
             This was a personal project that... (WRITE-UP NOT FINISHED)
           </p>
-          <StyledLink to='/neighbourhood'>Read more about Neighbourhood</StyledLink>
+          <StyledLink to='/work/neighbourhood'>Read more about Neighbourhood</StyledLink>
         </StyledDescription>
         <Img fixed={coverImgs.neighbourhood.childImageSharp.fixed}/>
       </PicParagraphContainer>
@@ -103,7 +103,7 @@ const Work = () => {
             be recreated or retouched through Photoshop and Illustrator and having very little experience with these
             programs, it was an interesting experience to say the least
           </p>
-          <StyledLink to='/ea'>Read more about EA</StyledLink>
+          <StyledLink to='/work/electronic-arts'>Read more about EA</StyledLink>
         </StyledDescription>
       </PicParagraphContainer>
     </Layout>
