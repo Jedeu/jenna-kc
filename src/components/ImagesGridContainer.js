@@ -10,6 +10,7 @@ const StyledImagesGrid = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: 1000px;
+  margin-top: 40px;
 `;
 
 const ImagesGridContainer = ({ children }) => (
