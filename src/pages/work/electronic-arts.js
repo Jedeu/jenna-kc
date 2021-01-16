@@ -53,7 +53,7 @@ const MediaValet = () => {
   return (
     <Layout>
       <SEO title="Electronic Arts" />
-      <div style={{ marginLeft: '110px', marginRight: '110px' }}>
+      <div>
         <Link to='/work'>
           <Img fixed={imgQuery.chevron.childImageSharp.fixed} style={{ marginRight: '72px' }} />
         </Link>
@@ -63,12 +63,10 @@ const MediaValet = () => {
           <ImageWithCaption
             source={imgQuery.placeholder.childImageSharp.fixed}
             content='Description of what this photo is'
-            screenshot
           />
           <ImageWithCaption
             source={imgQuery.placeholder.childImageSharp.fixed}
             content='We were about to present'
-            screenshot
           />
         </StyledImagesContainer>
         <StyledContentContainer>
@@ -111,12 +109,10 @@ const MediaValet = () => {
           <ImageWithCaption
             source={imgQuery.placeholder.childImageSharp.fixed}
             content='Description of what this photo is'
-            screenshot
           />
           <ImageWithCaption
             source={imgQuery.placeholder.childImageSharp.fixed}
             content='We were about to present'
-            screenshot
           />
         </StyledImagesContainer>
         <StyledContentContainer>

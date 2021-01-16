@@ -7,7 +7,11 @@ const StyledHeader = styled.header`
   margin-bottom: 1.45rem;
   display: flex;
   justify-content: space-between;
-  padding: 20px 80px;
+  padding: 24px 80px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1440px;
+  height: 64px;
 `;
 
 const StyledLinksContainer = styled.div`

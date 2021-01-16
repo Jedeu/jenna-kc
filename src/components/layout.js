@@ -15,11 +15,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <div
-        style={{ padding: `0 80px` }}
-      >
-        <main>{children}</main>
-      </div>
+      <main style={{ maxWidth: '1440px', marginLeft: 'auto', marginRight: 'auto' }}>{children}</main>
     </>
   )
 }

@@ -63,49 +63,51 @@ const Work = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <p style={{ fontSize: '1.5em' }}>Hi! My name is Jenna Kuck-Chang and I'm a product designer</p>
-      <PicParagraphContainer>
-        <Img fixed={coverImgs.mediaValet.childImageSharp.fixed}/>
-        <StyledDescription>
-          <p>
-            Starting from the pen and paper low fi stage all the way to release, I work with various teams like
-            product, marketing and development to get alignment and to make sure the product comes to life in the way that it was envisioned
-          </p>
-          <p>
-            Being a part of a growing product team has been a very interesting learning experience. I've learned a lot about product management
-            itself as well as challenges in setting up processes that can scale
-          </p>
-          <StyledLink to='/work/mediavalet'>Read more about MediaValet</StyledLink>
-        </StyledDescription>
-      </PicParagraphContainer>
-      <PicParagraphContainer>
-        <StyledDescription>
-          <p>
-            Neighbourhood was a project aimed to combat senior loneliness by providing a social platform where seniors could group for activities
-            for a period of time. During that period, the community that was doing the same activity could communicate and share their progress,
-            thus creating a community within Neighbourhood.
-          </p>
-          <p>
-            This was a personal project that... (WRITE-UP NOT FINISHED)
-          </p>
-          <StyledLink to='/work/neighbourhood'>Read more about Neighbourhood</StyledLink>
-        </StyledDescription>
-        <Img fixed={coverImgs.neighbourhood.childImageSharp.fixed}/>
-      </PicParagraphContainer>
-      <PicParagraphContainer>
-        <Img fixed={coverImgs.electronicArts.childImageSharp.fixed}/>
-        <StyledDescription>
-          <p>
-            For EA's redesign of the website, they needed to find assets like logos and hero images for all EA games
-          </p>
-          <p>
-            My role entailed going through a large list of these games to find the assets. They often needed to be
-            be recreated or retouched through Photoshop and Illustrator and having very little experience with these
-            programs, it was an interesting experience to say the least
-          </p>
-          <StyledLink to='/work/electronic-arts'>Read more about EA</StyledLink>
-        </StyledDescription>
-      </PicParagraphContainer>
+      <div style={{ padding: '0 80px'}}>
+        <p style={{ fontSize: '1.5em' }}>Hi! My name is Jenna Kuck-Chang and I'm a product designer</p>
+        <PicParagraphContainer>
+          <Img fixed={coverImgs.mediaValet.childImageSharp.fixed}/>
+          <StyledDescription>
+            <p>
+              Starting from the pen and paper low fi stage all the way to release, I work with various teams like
+              product, marketing and development to get alignment and to make sure the product comes to life in the way that it was envisioned
+            </p>
+            <p>
+              Being a part of a growing product team has been a very interesting learning experience. I've learned a lot about product management
+              itself as well as challenges in setting up processes that can scale
+            </p>
+            <StyledLink to='/work/mediavalet'>Read more about MediaValet</StyledLink>
+          </StyledDescription>
+        </PicParagraphContainer>
+        <PicParagraphContainer>
+          <StyledDescription>
+            <p>
+              Neighbourhood was a project aimed to combat senior loneliness by providing a social platform where seniors could group for activities
+              for a period of time. During that period, the community that was doing the same activity could communicate and share their progress,
+              thus creating a community within Neighbourhood.
+            </p>
+            <p>
+              This was a personal project that... (WRITE-UP NOT FINISHED)
+            </p>
+            <StyledLink to='/work/neighbourhood'>Read more about Neighbourhood</StyledLink>
+          </StyledDescription>
+          <Img fixed={coverImgs.neighbourhood.childImageSharp.fixed}/>
+        </PicParagraphContainer>
+        <PicParagraphContainer>
+          <Img fixed={coverImgs.electronicArts.childImageSharp.fixed}/>
+          <StyledDescription>
+            <p>
+              For EA's redesign of the website, they needed to find assets like logos and hero images for all EA games
+            </p>
+            <p>
+              My role entailed going through a large list of these games to find the assets. They often needed to be
+              be recreated or retouched through Photoshop and Illustrator and having very little experience with these
+              programs, it was an interesting experience to say the least
+            </p>
+            <StyledLink to='/work/electronic-arts'>Read more about EA</StyledLink>
+          </StyledDescription>
+        </PicParagraphContainer>
+      </div>
     </Layout>
   )
 }

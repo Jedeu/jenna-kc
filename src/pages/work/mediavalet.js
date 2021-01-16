@@ -6,92 +6,91 @@ import Img from "gatsby-image"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import ImageWithCaption from '../../components/ImageWithCaption'
-
-const StyledImagesContainer = styled.div`
-  display: flex;
-  margin-bottom: 2.5em;
-  flex-wrap: wrap;
-
-  & > div:nth-child(2) {
-    margin-left: 2.5em;
-  }
-
-  & > div:nth-child(5) {
-    margin-left: 2.5em;
-  }
-`;
+import ImagesFlexContainer from '../../components/ImagesFlexContainer'
+import ImagesGridContainer from '../../components/ImagesGridContainer'
+import ContentContainer from '../../components/ContentContainer';
 
 const StyledParagraph = styled.p`
   margin-bottom: 2.5em;
 `;
-
-const StyledContentContainer = styled.div`
-  * {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 80%;
-    font-size: 1.125em;
-  }
-
-  padding-bottom: 2.5em;
-`
 
 const MediaValet = () => {
   const imgQuery = useStaticQuery(graphql`
     query {
       placeholder: file(relativePath: { eq: "placeholder.png" }) {
         childImageSharp {
-          fixed(width: 480, height: 360) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
       aboutToPresent: file(relativePath: { eq: "mediavalet-present.png" }) {
         childImageSharp {
-          fixed(width: 480, height: 360) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
       shareAssets: file(relativePath: { eq: "mediavalet-share-assets.png" }) {
         childImageSharp {
-          fixed(width: 480, height: 360) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
       gallery: file(relativePath: { eq: "mediavalet-gallery.png" }) {
         childImageSharp {
-          fixed(width: 480, height: 360) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
       lofi: file(relativePath: { eq: "mediavalet-lo-fi.png" }) {
         childImageSharp {
-          fixed(width: 480, height: 360) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
       emptyPortal: file(relativePath: { eq: "mediavalet-empty-portal.png" }) {
         childImageSharp {
-          fixed(width: 480, height: 360) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
       portalSettings: file(relativePath: { eq: "mediavalet-portal-settings.png" }) {
         childImageSharp {
-          fixed(width: 480, height: 360) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
       noAssets: file(relativePath: { eq: "mediavalet-no-assets.png" }) {
         childImageSharp {
-          fixed(width: 480, height: 360) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      review: file(relativePath: { eq: "mediavalet-review.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      penPaper: file(relativePath: { eq: "mediavalet-pen-paper.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      whiteboard: file(relativePath: { eq: "mediavalet-whiteboard.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -108,24 +107,26 @@ const MediaValet = () => {
   return (
     <Layout>
       <SEO title="MediaValet" />
-      <div style={{ marginLeft: '110px', marginRight: '110px' }}>
-        <Link to='/work'>
-          <Img fixed={imgQuery.chevron.childImageSharp.fixed} style={{ marginRight: '72px' }} />
-        </Link>
-        <span style={{ fontSize: '1.5em' }}>MediaValet</span>
-        <span style={{ fontSize: '1.125em', marginLeft: '16px' }}>Product Designer</span>
-        <StyledImagesContainer style={{ marginTop: '2.5em'}}>
+      <div>
+        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '40px', marginLeft: 'auto', marginRight: 'auto', maxWidth: '1000px'  }}>
+          <Link to='/work' style={{ marginRight: '30px', textDecoration: 'none', color: '#4C4C4C', fontSize: '1.125em', display: 'flex', alignItems: 'center' }}>
+            <Img fixed={imgQuery.chevron.childImageSharp.fixed} />
+            <span style={{ marginLeft: '6px' }}>Back</span>
+          </Link>
+          <span style={{ fontSize: '1.5em' }}>MediaValet</span>
+          <span style={{ fontSize: '1.125em', marginLeft: '16px' }}>Product Designer</span>
+        </div>
+        <ImagesFlexContainer style={{ marginTop: '2.5em'}}>
           <ImageWithCaption
-            source={imgQuery.placeholder.childImageSharp.fixed}
+            source={imgQuery.review.childImageSharp.fluid}
             content='Description of what this photo is'
-            screenshot
           />
           <ImageWithCaption
-            source={imgQuery.aboutToPresent.childImageSharp.fixed}
+            source={imgQuery.aboutToPresent.childImageSharp.fluid}
             content='We were about to present'
           />
-        </StyledImagesContainer>
-        <StyledContentContainer>
+        </ImagesFlexContainer>
+        <ContentContainer>
           <StyledParagraph>
             As a product designer at MediaValet, I work with various teams like product, marketing and development to get alignment
             and to make sure the product comes to life in the way that it was envisioned. I may be brainstorming and whiteboarding
@@ -156,21 +157,19 @@ const MediaValet = () => {
           <div>- Be able to customize settings like setting an expiry date and configuring download settings</div>
           <div>- Be able to customize the assets by creating sections, having section header and description text fields</div>
           <div>- Changing the design so that assets would be displayed more visually (this will become more clear later in the screenshots)</div>
-          <div>- Be responsive so external users can view it on different devices</div>
-        </StyledContentContainer>
-        <StyledImagesContainer>
+          <div style={{ marginBottom: '40px' }}>- Be responsive so external users can view it on different devices</div>
+        </ContentContainer>
+        <ImagesFlexContainer>
           <ImageWithCaption
-            source={imgQuery.shareAssets.childImageSharp.fixed}
+            source={imgQuery.shareAssets.childImageSharp.fluid}
             content='What the set up for Web Galleries looked like'
-            screenshot
           />
           <ImageWithCaption
-            source={imgQuery.gallery.childImageSharp.fixed}
+            source={imgQuery.gallery.childImageSharp.fluid}
             content='What users would see once the Web Gallery was shared'
-            screenshot
           />
-        </StyledImagesContainer>
-        <StyledContentContainer>
+        </ImagesFlexContainer>
+        <ContentContainer>
           <StyledParagraph>
             Once the problem is defined and feature requirements are more clear, I begin low fidelity prototyping.
             Using a pen and paper, I take time to wireframe possible solutions. Since the office has switched to remote work,
@@ -195,70 +194,60 @@ const MediaValet = () => {
             branding or add descriptions for assets that they're adding. These steps also helped when presenting the solution. Within the product
             team, it narrowed down which part of the user flow needed more research. With other stakeholders, it helped facilitate....
           </StyledParagraph>
-        </StyledContentContainer>
-        <StyledImagesContainer>
+        </ContentContainer>
+        <ImagesGridContainer style={{ flexWrap: 'wrap' }}>
           <ImageWithCaption
-            source={imgQuery.lofi.childImageSharp.fixed}
+            source={imgQuery.lofi.childImageSharp.fluid}
             content='An example of a low fidelity prototype. It’s a messy process at the beginning.'
-            screenshot
           />
           <ImageWithCaption
-            source={imgQuery.placeholder.childImageSharp.fixed}
+            source={imgQuery.penPaper.childImageSharp.fluid}
             content='An example of low fidelity prototype. The cutouts were used to show hover states.'
-            screenshot
           />
-          <div style={{ flexBasis: '100%', height: '25px' }}></div>
           <ImageWithCaption
-            source={imgQuery.placeholder.childImageSharp.fixed}
+            source={imgQuery.whiteboard.childImageSharp.fluid}
             content='How Branded Portal was presented in design reviews'
-            screenshot
           />
           <ImageWithCaption
-            source={imgQuery.placeholder.childImageSharp.fixed}
+            source={imgQuery.placeholder.childImageSharp.fluid}
             content='Description of what this photo is'
-            screenshot
           />
-        </StyledImagesContainer>
-        <StyledContentContainer>
-          <StyledParagraph>
+        </ImagesGridContainer>
+        <ContentContainer>
+          <StyledParagraph style={{ paddingTop: '40px' }}>
             Once there is aligned on one or two solutions, I'll move onto high fidelity prototyping. MediaValet uses Sketch for wireframing
             and InVision for prototyping. At this stage, it's all in the details and I try to be as pixel-perfect as possible. The interactive
             prototypes at this stage are used by various teams to demo to current and potential clients and the final prototype is used in the
             developer hand off process.
           </StyledParagraph>
-        </StyledContentContainer>
-        <StyledImagesContainer>
+        </ContentContainer>
+        <ImagesGridContainer>
           <ImageWithCaption
-            source={imgQuery.emptyPortal.childImageSharp.fixed}
+            source={imgQuery.emptyPortal.childImageSharp.fluid}
             content='Description of what this photo is'
-            screenshot
           />
           <ImageWithCaption
-            source={imgQuery.portalSettings.childImageSharp.fixed}
+            source={imgQuery.portalSettings.childImageSharp.fluid}
             content='We were about to present'
-            screenshot
           />
-          <div style={{ flexBasis: '100%', height: '25px' }}></div>
           <ImageWithCaption
-            source={imgQuery.noAssets.childImageSharp.fixed}
+            source={imgQuery.noAssets.childImageSharp.fluid}
             content='Description of what this photo is'
-            screenshot
           />
           <ImageWithCaption
-            source={imgQuery.placeholder.childImageSharp.fixed}
+            source={imgQuery.placeholder.childImageSharp.fluid}
             content='We were about to present'
-            screenshot
           />
-        </StyledImagesContainer>
-        <StyledContentContainer>
-          <StyledParagraph>
+        </ImagesGridContainer>
+        <ContentContainer>
+          <StyledParagraph style={{ paddingTop: '40px' }}>
             During development, the high fidelity wireframes are linked to tickets and used for reference in development. As the developers
             work on the feature, they may have quetsions that the product team didn't consider and small changes may have to be made.
             I'm also working with developers closely at this stage to make sure the design is being translated properly to development. During
             the development stage, the product team will also work with the marketing and customer success teams to discuss how the feature will
             be onboarded and marketed.
           </StyledParagraph>
-        </StyledContentContainer>
+        </ContentContainer>
       </div>
     </Layout>
   )
