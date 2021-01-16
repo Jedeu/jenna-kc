@@ -142,7 +142,7 @@ const MediaValet = () => {
         </ImagesFlexContainer>
         <ContentContainer>
           <StyledParagraph>
-            As a product designer at MediaValet, I work with various teams like product, marketing and development to get alignment
+            As a product designer at MediaValet, test I work with various teams like product, marketing and development to get alignment
             and to make sure the product comes to life in the way that it was envisioned. On a given day, I may be brainstorming
             and whiteboarding an upcoming feature with product owners, demoing the newest prototype to stakeholders or reviewing UI
             with developers.
