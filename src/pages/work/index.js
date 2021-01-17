@@ -8,6 +8,10 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import PicParagraphContainer from '../../components/PicParagraphContainer'
 
+const StyledParagraph = styled.p`
+  margin-bottom: 1.5em;
+`;
+
 const StyledDescription = styled.div`
   max-width: 629px;
   max-height: 420px;
@@ -68,27 +72,27 @@ const Work = () => {
         <PicParagraphContainer>
           <Img fixed={coverImgs.mediaValet.childImageSharp.fixed}/>
           <StyledDescription>
-            <p>
-              Starting from the pen and paper low fi stage all the way to release, I work with various teams like
+            <StyledParagraph>
+              Starting from the pen and paper all the way to release, I work with various teams like
               product, marketing and development to get alignment and to make sure the product comes to life in the way that it was envisioned
-            </p>
-            <p>
+            </StyledParagraph>
+            <StyledParagraph>
               Being a part of a growing product team has been a very interesting learning experience. I've learned a lot about product management
-              itself as well as challenges in setting up processes that can scale
-            </p>
+              as well as challenges in setting up processes that can scale
+            </StyledParagraph>
             <StyledLink to='/work/mediavalet'>Read more about MediaValet</StyledLink>
           </StyledDescription>
         </PicParagraphContainer>
         <PicParagraphContainer>
           <StyledDescription>
-            <p>
+            <StyledParagraph>
               Neighbourhood was a project aimed to combat senior loneliness by providing a social platform where seniors could group for activities
               for a period of time. During that period, the community that was doing the same activity could communicate and share their progress,
               thus creating a community within Neighbourhood.
-            </p>
-            <p>
-              This was a personal project that... (WRITE-UP NOT FINISHED)
-            </p>
+            </StyledParagraph>
+            <StyledParagraph>
+              This project was designed for a specific user group that had specific user needs. Since this isn’t a user group I’m familiar with, learning about accessibility and user testing were a huge part of this project.
+            </StyledParagraph>
             <StyledLink to='/work/neighbourhood'>Read more about Neighbourhood</StyledLink>
           </StyledDescription>
           <Img fixed={coverImgs.neighbourhood.childImageSharp.fixed}/>
