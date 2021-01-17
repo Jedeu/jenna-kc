@@ -19,6 +19,10 @@ const StyledDescription = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+
+  @media(max-width: 1024px) {
+    width: 24px 40px;
+  }
 `;
 
 const StyledLink = styled(Link)`
@@ -34,6 +38,12 @@ const StyledLink = styled(Link)`
     height: 1px;
     bottom: 0;
     border-bottom: 2px solid #F5B4A2;
+  }
+
+  &:hover:before {
+    width: 100%;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
   }
 `;
 

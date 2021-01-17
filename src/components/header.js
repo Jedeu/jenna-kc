@@ -24,6 +24,24 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   font-size: 1.5em;
   color: #4C4C4C;
+  position: relative;
+
+  ${({ animate }) => animate && `
+    &:before {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 1px;
+      bottom: 0;
+      border-bottom: 2px solid #F5B4A2;
+    }
+
+    &:hover:before {
+      width: 100%;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-in-out;
+    }
+  `}
 `;
 
 const Header = () => (
@@ -36,6 +54,7 @@ const Header = () => (
         to='/work'
         activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
         partiallyActive={true}
+        animate
       >
         Work
       </StyledLink>
@@ -44,6 +63,7 @@ const Header = () => (
       <StyledLink
         to='/about'
         activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
+        animate
       >
         About
       </StyledLink>
