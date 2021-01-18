@@ -15,6 +15,14 @@ const StyledDescription = styled.div`
   justify-content: center;
 `;
 
+const StyledContainer = styled.div`
+  padding: 0 80px;
+
+  @media(max-width: 1024px) {
+    padding: 0 40px;
+  }
+`;
+
 const About = () => {
   const imgQuery = useStaticQuery(graphql`
     query {
@@ -31,7 +39,7 @@ const About = () => {
   return (
     <Layout>
       <SEO title="About me" />
-      <div style={{ padding: '0 80px' }}>
+      <StyledContainer style={{ padding: '0 80px' }}>
         <p style={{ fontSize: '1.5em' }}>A little bit about me</p>
         <PicParagraphContainer>
           <Img fixed={imgQuery.profileImg.childImageSharp.fixed} />
@@ -51,7 +59,7 @@ const About = () => {
             </p>
           </StyledDescription>
         </PicParagraphContainer>
-      </div>
+      </StyledContainer>
     </Layout>
   )
 }

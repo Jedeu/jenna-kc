@@ -12,16 +12,48 @@ const StyledParagraph = styled.p`
   margin-bottom: 1.5em;
 `;
 
+const StyledContainer = styled.div`
+  padding: 0 80px;
+
+  @media(max-width: 1024px) {
+    padding: 0 40px;
+  }
+
+  @media(max-width: 1023px) {
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+const StyledGreeting = styled.p`
+  font-size: 1.5em;
+
+  @media(max-width:1023px) {
+    width: 560px;
+  }
+
+  @media(max-width:590px) {
+    padding: 0 40px;
+  }
+`;
+
+const StyledImage = styled(Img)`
+  flex-shrink: 0;
+`;
+
 const StyledDescription = styled.div`
-  max-width: 629px;
+  max-width: 680px;
   max-height: 420px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
 
-  @media(max-width: 1024px) {
-    width: 24px 40px;
+  @media(max-width:1023px) {
+    width: 560px;
+    padding: 0 40px;
   }
 `;
 
@@ -77,10 +109,10 @@ const Work = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <div style={{ padding: '0 80px'}}>
-        <p style={{ fontSize: '1.5em' }}>Hi! My name is Jenna Kuck-Chang and I'm a product designer</p>
+      <StyledContainer>
+        <StyledGreeting>Hi! My name is Jenna Kuck-Chang and I'm a product designer</StyledGreeting>
         <PicParagraphContainer>
-          <Img fixed={coverImgs.mediaValet.childImageSharp.fixed}/>
+          <StyledImage fixed={coverImgs.mediaValet.childImageSharp.fixed}/>
           <StyledDescription>
             <StyledParagraph>
               Starting from the pen and paper all the way to release, I work with various teams like
@@ -93,22 +125,20 @@ const Work = () => {
             <StyledLink to='/work/mediavalet'>Read more about MediaValet</StyledLink>
           </StyledDescription>
         </PicParagraphContainer>
-        <PicParagraphContainer>
+        <PicParagraphContainer shouldReverse>
           <StyledDescription>
             <StyledParagraph>
-              Neighbourhood was a project aimed to combat senior loneliness by providing a social platform where seniors could group for activities
-              for a period of time. During that period, the community that was doing the same activity could communicate and share their progress,
-              thus creating a community within Neighbourhood.
+              Neighbourhood was a project aimed to combat senior loneliness by providing a social platform where seniors would participate in an activity group for a period of time.
             </StyledParagraph>
             <StyledParagraph>
               This project was designed for a specific user group that had specific user needs. Since this isn’t a user group I’m familiar with, learning about accessibility and user testing were a huge part of this project.
             </StyledParagraph>
             <StyledLink to='/work/neighbourhood'>Read more about Neighbourhood</StyledLink>
           </StyledDescription>
-          <Img fixed={coverImgs.neighbourhood.childImageSharp.fixed}/>
+          <StyledImage fixed={coverImgs.neighbourhood.childImageSharp.fixed}/>
         </PicParagraphContainer>
         <PicParagraphContainer>
-          <Img fixed={coverImgs.electronicArts.childImageSharp.fixed}/>
+          <StyledImage fixed={coverImgs.electronicArts.childImageSharp.fixed}/>
           <StyledDescription>
             <p>
               For EA's redesign of the website, they needed to find assets like logos and hero images for all EA games
@@ -121,7 +151,7 @@ const Work = () => {
             <StyledLink to='/work/electronic-arts'>Read more about EA</StyledLink>
           </StyledDescription>
         </PicParagraphContainer>
-      </div>
+      </StyledContainer>
     </Layout>
   )
 }

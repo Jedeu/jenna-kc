@@ -141,7 +141,7 @@ const MediaValet = () => {
           it using a feature called Branded Portals as an example. Branded portals allows MediaValet users to curate and customize
           a collection of assets for external users that do not have access to these assets.
        </StyledParagraph>
-    
+
        <div style={{ fontWeight: 'bold' }}>Research & Defining the Goal</div>
        <StyledParagraph>
           The first step of the design process at MediaValet is to gather data to figure out what the problem is. We conduct
@@ -172,7 +172,7 @@ const MediaValet = () => {
         />
       </ImagesFlexContainer>
       <ContentContainer>
-        
+
        <div style={{ fontWeight: 'bold' }}>Low Fidelity Prototyping</div>
         <StyledParagraph>
           When the goals are defined and feature requirements are more clear, I begin low fidelity prototyping.
@@ -194,9 +194,9 @@ const MediaValet = () => {
           Branded Portals was a big feature and I found myself getting overwhelmed by how much there was to do. So I broke down
           the feature into 4 steps: Create, Add, Customize and View. This helped organize my thoughts since each step had a distinct goal.
           For example, at the 'Add' step, the user wants to find and add assets. At the 'Customize' step, the user may want to apply their
-          branding or add descriptions for assets that they're adding. These steps also helped when presenting the solution since it narrowed 
-          down which part of the user flow needed more work. Branded Portals was supposed to be as self-serving as possible so the ‘Add’ and 
-          ‘Customize’ steps were tested and iterated on the most. 
+          branding or add descriptions for assets that they're adding. These steps also helped when presenting the solution since it narrowed
+          down which part of the user flow needed more work. Branded Portals was supposed to be as self-serving as possible so the ‘Add’ and
+          ‘Customize’ steps were tested and iterated on the most.
         </StyledParagraph>
       </ContentContainer>
       <ImagesGridContainer>
@@ -218,17 +218,16 @@ const MediaValet = () => {
         />
       </ImagesGridContainer>
       <ContentContainer>
-        
-       <div style={{ fontWeight: 'bold' }}>High Fidelity Prototyping</div>
-        <StyledParagraph style={{ paddingTop: '40px' }}>
+        <div style={{ paddingTop: '40px', fontWeight: 'bold' }}>High Fidelity Prototyping</div>
+        <StyledParagraph>
           Once there is aligned on one or two solutions, I'll move onto high fidelity prototyping. MediaValet uses Sketch for wireframing
           and InVision for prototyping. At this stage, it's all in the details and I try to be as pixel-perfect as possible. The interactive
           prototypes at this stage are used by various teams to demo to current and potential clients and the final prototype is used in the
           developer hand off process.
         </StyledParagraph>
         <StyledParagraph>
-          One of the goals for Branded Portals was to be a more visual way of sharing assets. To accomplish this, a mini design system was 
-          developed using InVision’s Design System Manager. Before going into development, components were created using an 8-point grid system 
+          One of the goals for Branded Portals was to be a more visual way of sharing assets. To accomplish this, a mini design system was
+          developed using InVision’s Design System Manager. Before going into development, components were created using an 8-point grid system
           and used throughtout Branded Portals.
         </StyledParagraph>
       </ContentContainer>
@@ -255,16 +254,15 @@ const MediaValet = () => {
         />
       </ImagesGridContainer>
       <ContentContainer>
-       
-       <div style={{ fontWeight: 'bold' }}>During Development</div>
-        <StyledParagraph style={{ paddingTop: '40px' }}>
+        <div style={{ paddingTop: '40px', fontWeight: 'bold' }}>During Development</div>
+        <StyledParagraph>
           During development, the high fidelity wireframes are linked to tickets and used for reference in development. As the developers
-          work on the feature, they may have quetsions and small changes may have to be made. I work with developers closely at this stage 
-          to make sure the design is being translated properly to development. During the development stage, the product team will also work 
+          work on the feature, they may have quetsions and small changes may have to be made. I work with developers closely at this stage
+          to make sure the design is being translated properly to development. During the development stage, the product team will also work
           with the marketing and customer success teams to discuss how the feature will be onboarded and marketed.
         </StyledParagraph>
         <StyledParagraph>
-          Branded Portals is currently in in beta and still being actively worked on by the product team and the dev team. Some items on the 
+          Branded Portals is currently in in beta and still being actively worked on by the product team and the dev team. Some items on the
           roadmap include improving the mobile view and providing more tracking.
         </StyledParagraph>
       </ContentContainer>
