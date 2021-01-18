@@ -8,11 +8,16 @@ import SEO from "../components/seo"
 import PicParagraphContainer from '../components/PicParagraphContainer'
 
 const StyledDescription = styled.div`
-  max-width: 629px;
-  max-height: 375px;
+  max-width: 680px;
+  max-height: 420px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media(max-width:1023px) {
+    width: 560px;
+    padding: 0 40px;
+  }
 `;
 
 const StyledContainer = styled.div`
@@ -21,6 +26,17 @@ const StyledContainer = styled.div`
   @media(max-width: 1024px) {
     padding: 0 40px;
   }
+
+  @media(max-width: 1023px) {
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+const StyledImage = styled(Img)`
+  flex-shrink: 0;
 `;
 
 const About = () => {
@@ -42,7 +58,7 @@ const About = () => {
       <StyledContainer style={{ padding: '0 80px' }}>
         <p style={{ fontSize: '1.5em' }}>A little bit about me</p>
         <PicParagraphContainer>
-          <Img fixed={imgQuery.profileImg.childImageSharp.fixed} />
+          <StyledImage fixed={imgQuery.profileImg.childImageSharp.fixed} />
           <StyledDescription>
             <p>Hi, I'm a product designer currently based in Vancouver, BC.</p>
             <p>
