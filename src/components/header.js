@@ -12,6 +12,18 @@ const StyledHeader = styled.header`
   margin-right: auto;
   max-width: 1440px;
   height: 64px;
+
+  @media(max-width: 1024px) {
+    padding: 24px 40px;
+  }
+
+  @media(max-width: 1023px) {
+    padding: 24px 0;
+  }
+
+  @media(max-width:590px) {
+    padding: 24px 40px;
+  }
 `;
 
 const StyledLinksContainer = styled.div`

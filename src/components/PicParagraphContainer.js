@@ -8,10 +8,29 @@ const StyledExperienceRow = styled.div`
   & div:nth-child(2) {
     margin-left: 2.5em;
   }
+
+  @media(max-width:1023px) {
+    flex-direction: column;
+    align-items: center;
+
+    & div:nth-child(2) {
+      margin-left: 0;
+      margin-top: 24px;
+    }
+
+    ${({ shouldReverse }) => shouldReverse && `
+      flex-direction: column-reverse;
+
+      & div:nth-child(2) {
+        margin-top: 0;
+        margin-bottom: 24px;
+      }
+    `}
+  }
 `;
 
-const PicParagraphContainer = ({ children }) => (
- <StyledExperienceRow>
+const PicParagraphContainer = ({ children, shouldReverse }) => (
+ <StyledExperienceRow shouldReverse={shouldReverse} >
      {children}
  </StyledExperienceRow>
 )
