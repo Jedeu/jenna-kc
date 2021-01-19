@@ -37,12 +37,20 @@ const StyledGreeting = styled.p`
   @media(max-width:590px) {
     padding: 0 40px;
   }
+
+  @media(max-width:520px) {
+    width: 100vw;
+  }
 `;
 
-const StyledImage = styled(Img)`
+const StyledImgContainer = styled.div`
   flex-shrink: 0;
-`;
+  width: 560px;
 
+  @media(max-width:580px) {
+    width: 100vw;
+  }
+`;
 const StyledDescription = styled.div`
   max-width: 680px;
   max-height: 420px;
@@ -84,22 +92,22 @@ const Work = ({ location }) => {
     query {
       mediaValet: file(relativePath: { eq: "mediavalet.png" }) {
         childImageSharp {
-          fixed(width: 560, height: 420) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 560) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
       neighbourhood: file(relativePath: { eq: "neighbourhood.png" }) {
         childImageSharp {
-          fixed(width: 560, height: 420) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 560) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
       electronicArts: file(relativePath: { eq: "ea.png" }) {
         childImageSharp {
-          fixed(width: 560, height: 420) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 560) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -115,7 +123,9 @@ const Work = ({ location }) => {
       <StyledContainer>
         <StyledGreeting>Hi! My name is Jenna Kuck-Chang and I'm a product designer</StyledGreeting>
         <PicParagraphContainer>
-          <StyledImage fixed={coverImgs.mediaValet.childImageSharp.fixed}/>
+          <StyledImgContainer>
+            <Img fluid={coverImgs.mediaValet.childImageSharp.fluid} />
+          </StyledImgContainer>
           <StyledDescription>
             <StyledParagraph>
               Starting from the pen and paper all the way to release, I work with various teams like
@@ -138,10 +148,14 @@ const Work = ({ location }) => {
             </StyledParagraph>
             <StyledLink to='/work/neighbourhood'>Read more about Neighbourhood</StyledLink>
           </StyledDescription>
-          <StyledImage fixed={coverImgs.neighbourhood.childImageSharp.fixed}/>
+          <StyledImgContainer>
+            <Img fluid={coverImgs.neighbourhood.childImageSharp.fluid}/>
+          </StyledImgContainer>
         </PicParagraphContainer>
         <PicParagraphContainer>
-          <StyledImage fixed={coverImgs.electronicArts.childImageSharp.fixed}/>
+          <StyledImgContainer>
+            <Img fluid={coverImgs.electronicArts.childImageSharp.fluid}/>
+          </StyledImgContainer>
           <StyledDescription>
             <p>
               For EA's redesign of the website, they needed to find assets like logos and hero images for all EA games

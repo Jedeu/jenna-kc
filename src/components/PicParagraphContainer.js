@@ -10,8 +10,8 @@ const StyledExperienceRow = styled.div`
   }
 
   @media(max-width:1023px) {
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
 
     & div:nth-child(2) {
       margin-left: 0;
@@ -19,11 +19,16 @@ const StyledExperienceRow = styled.div`
     }
 
     ${({ shouldReverse }) => shouldReverse && `
-      flex-direction: column-reverse;
+      flex-direction: row-reverse;
+
+      & div:first-child {
+        order: 2;
+      }
 
       & div:nth-child(2) {
         margin-top: 0;
         margin-bottom: 24px;
+        order: 1;
       }
     `}
   }
