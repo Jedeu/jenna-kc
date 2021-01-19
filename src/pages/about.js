@@ -18,6 +18,11 @@ const StyledDescription = styled.div`
     width: 560px;
     padding: 0 40px;
   }
+
+  @media(max-width: 535px) {
+    width: 100vw;
+    padding: 0 24px;
+  }
 `;
 
 const StyledContainer = styled.div`
@@ -28,15 +33,19 @@ const StyledContainer = styled.div`
   }
 
   @media(max-width: 1023px) {
-    padding: 0 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 `;
 
-const StyledImage = styled(Img)`
+const StyledImgContainer = styled.div`
   flex-shrink: 0;
+  width: 500px;
+
+  @media(max-width:580px) {
+    width: 100vw;
+  }
 `;
 
 const About = ({ location }) => {
@@ -44,8 +53,8 @@ const About = ({ location }) => {
     query {
       profileImg: file(relativePath: { eq: "profile.png" }) {
         childImageSharp {
-          fixed(width: 500, height: 375) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 500) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -58,10 +67,12 @@ const About = ({ location }) => {
         title="About me"
         pathname={location.pathname}
       />
-      <StyledContainer style={{ padding: '0 80px' }}>
+      <StyledContainer>
         <p style={{ fontSize: '1.5em' }}>A little bit about me</p>
         <PicParagraphContainer>
-          <StyledImage fixed={imgQuery.profileImg.childImageSharp.fixed} />
+          <StyledImgContainer>
+            <Img fluid={imgQuery.profileImg.childImageSharp.fluid} />
+          </StyledImgContainer>
           <StyledDescription>
             <p>Hi, I'm a product designer currently based in Vancouver, BC.</p>
             <p>

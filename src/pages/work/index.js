@@ -20,10 +20,13 @@ const StyledContainer = styled.div`
   }
 
   @media(max-width: 1023px) {
-    padding: 0 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  @media(max-width: 495px) {
+    padding: 0 24px;
   }
 `;
 
@@ -62,6 +65,10 @@ const StyledDescription = styled.div`
   @media(max-width:1023px) {
     width: 560px;
     padding: 0 40px;
+  }
+
+  @media(max-width: 495px) {
+    width: 100vw;
   }
 `;
 
