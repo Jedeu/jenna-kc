@@ -125,11 +125,11 @@ const MediaValet = ({ location }) => {
       <ImagesFlexContainer style={{ marginTop: '2.5em'}}>
         <ImageWithCaption
           source={imgQuery.iaReview.childImageSharp.fluid}
-          content='Description of what this photo is'
+          content='An example of a design review'
         />
         <ImageWithCaption
           source={imgQuery.aboutToPresent.childImageSharp.fluid}
-          content='We were about to present'
+          content='We were about to present a low fidelity wireframe'
         />
       </ImagesFlexContainer>
       <ContentContainer>
