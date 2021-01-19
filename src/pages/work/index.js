@@ -79,7 +79,7 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const Work = () => {
+const Work = ({ location }) => {
   const coverImgs = useStaticQuery(graphql`
     query {
       mediaValet: file(relativePath: { eq: "mediavalet.png" }) {
@@ -108,7 +108,10 @@ const Work = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO
+        title="Home"
+        pathname={location.pathname}
+      />
       <StyledContainer>
         <StyledGreeting>Hi! My name is Jenna Kuck-Chang and I'm a product designer</StyledGreeting>
         <PicParagraphContainer>

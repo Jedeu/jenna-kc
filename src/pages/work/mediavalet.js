@@ -14,7 +14,7 @@ const StyledParagraph = styled.p`
   margin-bottom: 1.5em;
 `;
 
-const MediaValet = () => {
+const MediaValet = ({ location }) => {
   const imgQuery = useStaticQuery(graphql`
     query {
       aboutToPresent: file(relativePath: { eq: "mediavalet-present.jpg" }) {
@@ -113,7 +113,10 @@ const MediaValet = () => {
 
   return (
     <Layout>
-      <SEO title="MediaValet" />
+      <SEO
+        title="MediaValet"
+        pathname={location.pathname}
+      />
       <WorkPageHeader
         chevronFixed={imgQuery.chevron.childImageSharp.fixed}
         company="MediaValet"
@@ -142,7 +145,7 @@ const MediaValet = () => {
           a collection of assets for external users that do not have access to these assets.
        </StyledParagraph>
 
-       <div style={{ fontWeight: 'bold' }}>Research & Defining the Goal</div>
+       <div style={{ fontWeight: 'normal' }}>Research & Defining the Goal</div>
        <StyledParagraph>
           The first step of the design process at MediaValet is to gather data to figure out what the problem is. We conduct
           competitive analyses and talk to the sales, customer success, and support teams. If this is an improvement on an existing feature,
@@ -173,7 +176,7 @@ const MediaValet = () => {
       </ImagesFlexContainer>
       <ContentContainer>
 
-       <div style={{ fontWeight: 'bold' }}>Low Fidelity Prototyping</div>
+       <div style={{ fontWeight: 'normal' }}>Low Fidelity Prototyping</div>
         <StyledParagraph>
           When the goals are defined and feature requirements are more clear, I begin low fidelity prototyping.
           I wireframe possible solutions, usually on pen and paper. Since the office has switched to remote work,
@@ -218,7 +221,7 @@ const MediaValet = () => {
         />
       </ImagesGridContainer>
       <ContentContainer>
-        <div style={{ paddingTop: '40px', fontWeight: 'bold' }}>High Fidelity Prototyping</div>
+        <div style={{ paddingTop: '40px', fontWeight: 'normal' }}>High Fidelity Prototyping</div>
         <StyledParagraph>
           Once there is aligned on one or two solutions, I'll move onto high fidelity prototyping. MediaValet uses Sketch for wireframing
           and InVision for prototyping. At this stage, it's all in the details and I try to be as pixel-perfect as possible. The interactive
@@ -254,7 +257,7 @@ const MediaValet = () => {
         />
       </ImagesGridContainer>
       <ContentContainer>
-        <div style={{ paddingTop: '40px', fontWeight: 'bold' }}>During Development</div>
+        <div style={{ paddingTop: '40px', fontWeight: 'normal' }}>During Development</div>
         <StyledParagraph>
           During development, the high fidelity wireframes are linked to tickets and used for reference in development. As the developers
           work on the feature, they may have quetsions and small changes may have to be made. I work with developers closely at this stage
