@@ -39,7 +39,7 @@ const StyledImage = styled(Img)`
   flex-shrink: 0;
 `;
 
-const About = () => {
+const About = ({ location }) => {
   const imgQuery = useStaticQuery(graphql`
     query {
       profileImg: file(relativePath: { eq: "profile.png" }) {
@@ -54,7 +54,10 @@ const About = () => {
 
   return (
     <Layout>
-      <SEO title="About me" />
+      <SEO
+        title="About me"
+        pathname={location.pathname}
+      />
       <StyledContainer style={{ padding: '0 80px' }}>
         <p style={{ fontSize: '1.5em' }}>A little bit about me</p>
         <PicParagraphContainer>

@@ -13,7 +13,7 @@ const StyledParagraph = styled.p`
   margin-bottom: 1.5em;
 `;
 
-const ElectronicArts = () => {
+const ElectronicArts = ({ location }) => {
   const imgQuery = useStaticQuery(graphql`
     query {
       needForSpeed: file(relativePath: { eq: "ea-need-for-speed.jpg" }) {
@@ -56,7 +56,10 @@ const ElectronicArts = () => {
 
   return (
     <Layout>
-      <SEO title="Electronic Arts" />
+      <SEO
+        title="Electronic Arts"
+        pathname={location.pathname}
+      />
         <WorkPageHeader
           chevronFixed={imgQuery.chevron.childImageSharp.fixed}
           company="Electronic Arts"
@@ -90,7 +93,7 @@ const ElectronicArts = () => {
             In the 3 months, I learned to be sufficient at Photoshop and Illustrator and honed my eye for detail.
           </StyledParagraph>
 
-          <div style={{ fontWeight: 'bold' }}>Photoshop and Illustrator</div>
+          <div style={{ fontWeight: 'normal' }}>Photoshop and Illustrator</div>
           <StyledParagraph>
             Some of the assets for the games were missing or didn't fit into how it will be used in the website. In these cases,
             I retouched or recreated them using Photoshop and Illustrator. I had mainly used Sketch up to this point and was very
@@ -117,7 +120,7 @@ const ElectronicArts = () => {
           />
         </ImagesFlexContainer>
         <ContentContainer>
-          <div style={{ fontWeight: 'bold', marginTop: '40px' }}>Eye for Detail</div>
+          <div style={{ fontWeight: 'normal', marginTop: '40px' }}>Eye for Detail</div>
           <StyledParagraph>
             When I first started, I frequently had to redo my work because I would misplace an image on the artboard by a pixel or
             two. Eye for detail and being pixel perfect was something I knew was important as a designer but this was my first time

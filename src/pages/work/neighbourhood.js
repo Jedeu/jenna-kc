@@ -13,7 +13,7 @@ const StyledParagraph = styled.p`
   margin-bottom: 1.5em;
 `;
 
-const Neighbourhood = () => {
+const Neighbourhood = ({ location }) => {
   const imgQuery = useStaticQuery(graphql`
     query {
       landing: file(relativePath: { eq: "neighbourhood-landing.jpg" }) {
@@ -56,7 +56,10 @@ const Neighbourhood = () => {
 
   return (
     <Layout>
-      <SEO title="Neighbourhood" />
+      <SEO
+        title="Neighbourhood"
+        pathname={location.pathname}
+      />
       <WorkPageHeader
         chevronFixed={imgQuery.chevron.childImageSharp.fixed}
         company="Neighbourhood"
@@ -88,24 +91,24 @@ const Neighbourhood = () => {
           in Neighbourhood with accessibility in mind.
         </StyledParagraph>
 
-        <div style={{ fontWeight: 'bold' }}>Screen size</div>
+        <div style={{ fontWeight: 'normal' }}>Screen size</div>
         <StyledParagraph>
           Seniors prefer to use a tablet or desktop because of the bigger screen size. So Neighbourhood was optimized for screen sizes 768px and above.
         </StyledParagraph>
 
-        <div style={{ fontWeight: 'bold' }}>Font</div>
+        <div style={{ fontWeight: 'normal' }}>Font</div>
         <StyledParagraph>
           Smaller fonts tend to be harder to read and for best readability, the font should be bigger than 12px and be a Sans Serif font.
           Neighbourhood used Raleway and 16px was the smallest font size used. Users could also pick the font size between 3 options.
         </StyledParagraph>
 
-        <div style={{ fontWeight: 'bold' }}>Gestures & Target Areas</div>
+        <div style={{ fontWeight: 'normal' }}>Gestures & Target Areas</div>
         <StyledParagraph>
           Some gestures like swipes may be unfamiliar or seniors may not be able to perform these gestures. Neighborhood kept all gestures
           to taps and clicks. For similar reasons, all target areas were designed to be at least 44 x 44 pixels.
         </StyledParagraph>
 
-        <div style={{ fontWeight: 'bold' }}>Color</div>
+        <div style={{ fontWeight: 'normal' }}>Color</div>
         <StyledParagraph>
           The primary color was chosen to provide a high contrast so CTAs and clickable elements would stand out. Ideally the color contrast ratio
           should be at least 3:1. The color contrast ratio for the primary color in Neighbourhood was 6.8:1.
