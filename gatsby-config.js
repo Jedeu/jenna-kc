@@ -3,6 +3,7 @@ module.exports = {
     title: `Jenna Kc`,
     description: `Hi, I'm a product designer based in Vancouver, BC`,
     author: `Jenna Kuck-Chang`,
+    siteUrl: 'https://www.jennakc.com'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -20,7 +21,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Jenna Kc`,
-        short_name: `starter`,
+        short_name: `JKc`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,

@@ -19,6 +19,7 @@ function SEO({ description, lang, meta, title, pathname }) {
             title
             description
             author
+            siteUrl
           }
         }
         img: file(relativePath: { eq: "profile.png" }) {
@@ -92,7 +93,7 @@ function SEO({ description, lang, meta, title, pathname }) {
       .concat([
         {
           property: "og:image",
-          content: image,
+          content: `${site.siteMetadata.siteUrl}${image.src}`,
         },
         {
           property: "og:image:width",
