@@ -1,5 +1,5 @@
 import { Link } from "gatsby"
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import Logo from "./logo"
 
@@ -27,6 +27,17 @@ const StyledHeader = styled.header`
   @media(max-width:590px) {
     padding: 24px 40px;
   }
+
+  @media(max-width:389px) {
+    flex-wrap: wrap;
+    height: ${({ open }) => open ? '320px' : '64px'};
+  }
+`;
+
+const StyledMobileLinksContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const StyledLinksContainer = styled.div`
@@ -57,22 +68,120 @@ const StyledLink = styled(Link)`
       transition-timing-function: ease-in-out;
     }
   `}
+
+  ${({ isMobile }) => isMobile && `
+    font-size: 0.875em;
+  `}
 `;
 
-const Header = () => (
-  <StyledHeader>
-    <StyledLink to='/work' style={{ minWidth: '85px' }}>
-      <Logo  />
-    </StyledLink>
+const StyledHamburger = styled.div`
+  width: 24px;
+  height: 10px;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+
+  span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #4C4C4C;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+  }
+
+  span:nth-child(1) {
+    top: 7px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+  }
+
+  span:nth-child(2) {
+    top: 14px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+  }
+
+  span:nth-child(3) {
+    top: 21px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+  }
+
+  ${({ shouldOpen }) => shouldOpen && `
+    span:nth-child(1) {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      top: 4px;
+      left: 6px;
+    }
+
+    span:nth-child(2) {
+      width: 0%;
+      opacity: 0;
+    }
+
+    span:nth-child(3) {
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      top: 21px;
+      left: 6px;
+    }
+  `}
+`;
+
+const Header = () => {
+  const [width, setWidth] = useState(window.innerWidth);
+  const [open, setOpen] = useState(false);
+  const breakpoint = 389;
+  const isMobile = width <= breakpoint;
+
+  useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth);
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => window.removeEventListener('resize', handleWindowResize);
+  }, [])
+
+
+  const displayNormalHeader = () => (
     <StyledLinksContainer>
-    <StyledLink
+      <StyledLink
         to='/work'
         activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
         partiallyActive={true}
         animate
       >
         Work
-      </StyledLink>
+        </StyledLink>
       <StyledLink to='/work'> &mdash;</StyledLink>
 
       <StyledLink
@@ -81,10 +190,93 @@ const Header = () => (
         animate
       >
         About
-      </StyledLink>
+        </StyledLink>
       <StyledLink to='/about'> &mdash;</StyledLink>
     </StyledLinksContainer>
-  </StyledHeader>
-)
+  )
+
+  const displayMobileHeader = () => (
+    <>
+      <StyledHamburger
+        onClick={() => setOpen(!open)}
+        shouldOpen={open}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </StyledHamburger>
+      { open &&
+        <div style={{ flex: '1 1 100%' }}>
+          <StyledMobileLinksContainer>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div style={{ marginLeft: '24px', marginBottom: '8px' }}>
+                <StyledLink
+                  to='/work'
+                  activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
+                  partiallyActive={true}
+                  animate
+                >
+                  Work
+                </StyledLink>
+                <StyledLink to='/work'> &mdash;</StyledLink>
+              </div>
+
+              <StyledLink
+                to='/work/mediavalet'
+                activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
+                partiallyActive={true}
+                animate
+                isMobile={isMobile}
+                style={{ marginBottom: '8px' }}
+              >
+                MediaValet
+              </StyledLink>
+              <StyledLink
+                to='/work/neighbourhood'
+                activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
+                partiallyActive={true}
+                animate
+                isMobile={isMobile}
+                style={{ marginBottom: '8px' }}
+              >
+                Neighbourhood
+              </StyledLink>
+              <StyledLink
+                to='/work/electronic-arts'
+                activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
+                partiallyActive={true}
+                animate
+                isMobile={isMobile}
+                style={{ marginBottom: '24px' }}
+              >
+                Electronic Arts
+              </StyledLink>
+            </div>
+
+            <div>
+              <StyledLink
+                to='/about'
+                activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
+                animate
+              >
+                About
+              </StyledLink>
+              <StyledLink to='/about'> &mdash;</StyledLink>
+            </div>
+          </StyledMobileLinksContainer>
+        </div>
+      }
+    </>
+  )
+
+  return (
+    <StyledHeader open={open}>
+      <StyledLink to='/work' style={{ minWidth: '85px' }}>
+        <Logo />
+      </StyledLink>
+      {isMobile ? displayMobileHeader() : displayNormalHeader()}
+    </StyledHeader>
+  )
+}
 
 export default Header
