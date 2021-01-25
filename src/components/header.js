@@ -158,7 +158,10 @@ const StyledHamburger = styled.div`
 `;
 
 const Header = () => {
-  const [width, setWidth] = useState(window.innerWidth);
+  // Do this so that Gatsby compile doesn't break
+  if (typeof window !== `undefined`) {
+    const [width, setWidth] = useState(window.innerWidth);
+  }
   const [open, setOpen] = useState(false);
   const breakpoint = 389;
   const isMobile = width <= breakpoint;
