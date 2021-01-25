@@ -1,4 +1,5 @@
 import { Link } from "gatsby"
+import { window } from 'browser-monads'
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import Logo from "./logo"
@@ -158,10 +159,7 @@ const StyledHamburger = styled.div`
 `;
 
 const Header = () => {
-  // Do this so that Gatsby compile doesn't break
-  if (typeof window !== `undefined`) {
-    const [width, setWidth] = useState(window.innerWidth);
-  }
+  const [width, setWidth] = useState(window.innerWidth);
   const [open, setOpen] = useState(false);
   const breakpoint = 389;
   const isMobile = width <= breakpoint;
