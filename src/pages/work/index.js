@@ -44,6 +44,10 @@ const StyledGreeting = styled.p`
   @media(max-width:520px) {
     width: 100vw;
   }
+
+  @media(max-width:389px) {
+    line-height: 1.875rem;
+  }
 `;
 
 const StyledImgContainer = styled.div`
@@ -128,7 +132,7 @@ const Work = ({ location }) => {
         pathname={location.pathname}
       />
       <StyledContainer>
-        <StyledGreeting>Hi! My name is Jenna Kuck-Chang and I'm a product designer</StyledGreeting>
+        <StyledGreeting>Hi! My name is Jenna Kuck-Chang I'm a product designer</StyledGreeting>
         <PicParagraphContainer>
           <StyledImgContainer>
             <Img fluid={coverImgs.mediaValet.childImageSharp.fluid} />

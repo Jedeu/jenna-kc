@@ -47,6 +47,20 @@ const StyledLinksContainer = styled.div`
   }
 `;
 
+const StyledPopOut = styled.div`
+  position: absolute;
+  right: 0;
+  top: 60px;
+  width: 100%;
+  height: 520px;
+  z-index: 2;
+  background: white;
+  flex: 1 1 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 const StyledLink = styled(Link)`
   text-decoration: none;
   font-size: 1.5em;
@@ -207,7 +221,7 @@ const Header = () => {
         <span></span>
       </StyledHamburger>
       { open &&
-        <div style={{ flex: '1 1 100%' }}>
+        <StyledPopOut>
           <StyledMobileLinksContainer>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <div style={{ marginLeft: '24px', marginBottom: '8px' }}>
@@ -265,7 +279,7 @@ const Header = () => {
               <StyledLink to='/about'> &mdash;</StyledLink>
             </div>
           </StyledMobileLinksContainer>
-        </div>
+        </StyledPopOut>
       }
     </>
   )
