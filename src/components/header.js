@@ -1,5 +1,5 @@
 import { Link } from "gatsby"
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import Logo from "./logo"
 
@@ -34,6 +34,13 @@ const StyledHeader = styled.header`
   }
 `;
 
+const StyledMobileContainer = styled.div`
+  display: none;
+  @media(max-width:389px) {
+    display: block;
+  }
+`;
+
 const StyledMobileLinksContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -43,6 +50,10 @@ const StyledMobileLinksContainer = styled.div`
 const StyledLinksContainer = styled.div`
   & a:nth-child(2) {
     margin-right: 40px;
+  }
+
+  @media(max-width:389px) {
+    display: none;
   }
 `;
 
@@ -83,9 +94,9 @@ const StyledLink = styled(Link)`
     }
   `}
 
-  ${({ isMobile }) => isMobile && `
+  @media(max-width:389px) {
     font-size: 0.875em;
-  `}
+  }
 `;
 
 const StyledHamburger = styled.div`
@@ -172,20 +183,7 @@ const StyledHamburger = styled.div`
 `;
 
 const Header = () => {
-  const [width, setWidth] = useState(null);
   const [open, setOpen] = useState(false);
-  const breakpoint = 389;
-  const isMobile = width <= breakpoint;
-
-  useEffect(() => {
-    setWidth(window.innerWidth);
-    const handleWindowResize = () => setWidth(window.innerWidth);
-
-    window.addEventListener('resize', handleWindowResize);
-
-    return () => window.removeEventListener('resize', handleWindowResize);
-  }, [])
-
 
   const displayNormalHeader = () => (
     <StyledLinksContainer>
@@ -211,7 +209,7 @@ const Header = () => {
   )
 
   const displayMobileHeader = () => (
-    <>
+    <StyledMobileContainer>
       <StyledHamburger
         onClick={() => setOpen(!open)}
         shouldOpen={open}
@@ -241,7 +239,6 @@ const Header = () => {
                 activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
                 partiallyActive={true}
                 animate
-                isMobile={isMobile}
                 style={{ marginBottom: '8px' }}
               >
                 MediaValet
@@ -251,7 +248,6 @@ const Header = () => {
                 activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
                 partiallyActive={true}
                 animate
-                isMobile={isMobile}
                 style={{ marginBottom: '8px' }}
               >
                 Neighbourhood
@@ -261,7 +257,6 @@ const Header = () => {
                 activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
                 partiallyActive={true}
                 animate
-                isMobile={isMobile}
                 style={{ marginBottom: '24px' }}
               >
                 Electronic Arts
@@ -281,7 +276,7 @@ const Header = () => {
           </StyledMobileLinksContainer>
         </StyledPopOut>
       }
-    </>
+    </StyledMobileContainer>
   )
 
   return (
@@ -289,7 +284,9 @@ const Header = () => {
       <StyledLink to='/work' style={{ minWidth: '85px' }}>
         <Logo />
       </StyledLink>
-      {isMobile ? displayMobileHeader() : displayNormalHeader()}
+      {/* Normal and Mobile will interchange at breakpoint 389px */}
+      {displayNormalHeader()}
+      {displayMobileHeader()}
     </StyledHeader>
   )
 }
