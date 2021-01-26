@@ -10,11 +10,20 @@ const StyledImage = styled(Img)`
   ${({ screenshot }) => screenshot && `border: 1px solid #B7B7B7;`}
 `;
 
+const StyledContainer = styled.div`
+  width: 480px;
+  flex-shrink: 0;
+
+  @media(max-width: 1024px) {
+    width: 452px;
+  }
+`;
+
 const ImageWithCaption = ({ source, content, screenshot }) => (
-  <div style={{ width: '480px' }}>
+  <StyledContainer>
     <StyledImage fluid={source} style={{ width: '100%' }} screenshot={screenshot} />
     <div style={{ fontSize: '0.75em', paddingLeft: '1em' }}>{content}</div>
-  </div>
+  </StyledContainer>
 )
 
 ImageWithCaption.propTypes = {

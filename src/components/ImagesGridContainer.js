@@ -11,6 +11,11 @@ const StyledImagesGrid = styled.div`
   margin-right: auto;
   max-width: 1000px;
   margin-top: 40px;
+
+  @media(max-width: 1024px) {
+    grid-template-columns: 452px 452px;
+    grid-template-rows: 360px 360px;
+  }
 `;
 
 const ImagesGridContainer = ({ children }) => (

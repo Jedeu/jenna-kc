@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 
 const Container = styled.div`
   display: flex;
-  alignItems: center;
+  align-items: center;
   margin-bottom: 40px;
   margin-left: auto;
   margin-right: auto;
