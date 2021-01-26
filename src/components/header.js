@@ -1,5 +1,4 @@
 import { Link } from "gatsby"
-import { window } from 'browser-monads'
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import Logo from "./logo"
@@ -173,12 +172,13 @@ const StyledHamburger = styled.div`
 `;
 
 const Header = () => {
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(null);
   const [open, setOpen] = useState(false);
   const breakpoint = 389;
   const isMobile = width <= breakpoint;
 
   useEffect(() => {
+    setWidth(window.innerWidth);
     const handleWindowResize = () => setWidth(window.innerWidth);
 
     window.addEventListener('resize', handleWindowResize);
