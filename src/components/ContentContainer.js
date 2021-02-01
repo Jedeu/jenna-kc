@@ -8,6 +8,10 @@ const StyledContentContainer = styled.div`
     max-width: 840px;
     font-size: 1.125em;
   }
+
+  @media(max-width: 399px) {
+    padding: 0 24px;
+  }
 `;
 
 const ContentContainer = ({ children }) => (

@@ -191,20 +191,20 @@ const Header = () => {
         to='/work'
         activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
         partiallyActive={true}
-        animate
+        animate={true}
       >
         Work
         </StyledLink>
-      <StyledLink to='/work'> &mdash;</StyledLink>
+      <StyledLink to='/work' animate> &mdash;</StyledLink>
 
       <StyledLink
         to='/about'
         activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
-        animate
+        animate={true}
       >
         About
         </StyledLink>
-      <StyledLink to='/about'> &mdash;</StyledLink>
+      <StyledLink to='/about' animate> &mdash;</StyledLink>
     </StyledLinksContainer>
   )
 
@@ -227,7 +227,7 @@ const Header = () => {
                   to='/work'
                   activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
                   partiallyActive={true}
-                  animate
+                  animate={true}
                 >
                   Work
                 </StyledLink>
@@ -238,7 +238,7 @@ const Header = () => {
                 to='/work/mediavalet'
                 activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
                 partiallyActive={true}
-                animate
+                animate={true}
                 style={{ marginBottom: '8px' }}
               >
                 MediaValet
@@ -247,7 +247,7 @@ const Header = () => {
                 to='/work/neighbourhood'
                 activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
                 partiallyActive={true}
-                animate
+                animate={true}
                 style={{ marginBottom: '8px' }}
               >
                 Neighbourhood
@@ -256,7 +256,7 @@ const Header = () => {
                 to='/work/electronic-arts'
                 activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
                 partiallyActive={true}
-                animate
+                animate={true}
                 style={{ marginBottom: '24px' }}
               >
                 Electronic Arts
@@ -267,7 +267,7 @@ const Header = () => {
               <StyledLink
                 to='/about'
                 activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
-                animate
+                animate={true}
               >
                 About
               </StyledLink>

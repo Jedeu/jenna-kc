@@ -12,9 +12,19 @@ const StyledImagesGrid = styled.div`
   max-width: 1000px;
   margin-top: 40px;
 
-  @media(max-width: 1024px) {
-    grid-template-columns: 452px 452px;
-    grid-template-rows: 360px 360px;
+  @media(max-width: 1095px) {
+    grid-template-columns: 1fr 1fr;
+    max-width: 100vw;
+  }
+
+  @media(max-width: 951px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div:not(:first-child) {
+      margin-top: 8px;
+    }
   }
 `;
 

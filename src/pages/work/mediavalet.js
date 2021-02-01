@@ -20,6 +20,22 @@ const StyledContainer = styled.div`
   @media(max-width: 1024px) {
     padding: 0 40px;
   }
+
+  @media(max-width: 952px) {
+    padding: 0 24px;
+  }
+
+  @media(max-width: 951px) {
+    padding: 0 144px;
+  }
+
+  @media(max-width: 770px) {
+    padding: 0 24px;
+  }
+
+  @media(max-width: 399px) {
+    padding: 0;
+  }
 `;
 
 const MediaValet = ({ location }) => {
