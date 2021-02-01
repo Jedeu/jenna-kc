@@ -11,6 +11,16 @@ const StyledImagesContainer = styled.div`
   & > div:nth-child(2) {
     margin-left: 2.5em;
   }
+
+  @media(max-width: 951px) {
+    flex-direction: column;
+    align-items: center;
+
+    & > div:nth-child(2) {
+      margin-left: 0;
+      margin-top: 2.5em;
+    }
+  }
 `;
 
 const ImagesFlexContainer = ({ children }) => (

@@ -5,11 +5,24 @@ import { Link } from 'gatsby'
 
 const Container = styled.div`
   display: flex;
-  alignItems: center;
+  align-items: center;
   margin-bottom: 40px;
   margin-left: auto;
   margin-right: auto;
   max-width: 1000px;
+
+  @media(max-width: 951px) {
+    width: 560px;
+  }
+
+  @media(max-width: 590px) {
+    padding: 0 24px;
+  }
+
+  @media(max-width: 399px) {
+    justify-content: center;
+    max-width: 100vw;
+  }
 `;
 
 const StyledLink = styled(Link)`
@@ -19,6 +32,10 @@ const StyledLink = styled(Link)`
   font-size: 1.125em;
   display: flex;
   align-items: center;
+
+  @media(max-width: 399px) {
+    display: none;
+  }
 `;
 
 const WorkPageHeader = ({ chevronFixed, company, title }) => (
