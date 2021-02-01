@@ -8,17 +8,10 @@ import ImageWithCaption from '../../components/ImageWithCaption'
 import ImagesFlexContainer from '../../components/ImagesFlexContainer'
 import ContentContainer from '../../components/ContentContainer'
 import WorkPageHeader from "../../components/WorkPageHeader"
+import CaseStudyContainer from '../../components/CaseStudyContainer'
 
 const StyledParagraph = styled.p`
   margin-bottom: 1.5em;
-`;
-
-const StyledContainer = styled.div`
-  padding: 0 80px;
-
-  @media(max-width: 1024px) {
-    padding: 0 40px;
-  }
 `;
 
 const ElectronicArts = ({ location }) => {
@@ -68,7 +61,7 @@ const ElectronicArts = ({ location }) => {
         title="Electronic Arts"
         pathname={location.pathname}
       />
-        <StyledContainer>
+        <CaseStudyContainer>
           <WorkPageHeader
             chevronFixed={imgQuery.chevron.childImageSharp.fixed}
             company="Electronic Arts"
@@ -147,7 +140,7 @@ const ElectronicArts = ({ location }) => {
               Freeplay and Need for Speed.
             </StyledParagraph>
           </ContentContainer>
-        </StyledContainer>
+        </CaseStudyContainer>
     </Layout>
   )
 }

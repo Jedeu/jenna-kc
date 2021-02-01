@@ -9,33 +9,10 @@ import ImagesFlexContainer from '../../components/ImagesFlexContainer'
 import ImagesGridContainer from '../../components/ImagesGridContainer'
 import ContentContainer from '../../components/ContentContainer'
 import WorkPageHeader from "../../components/WorkPageHeader"
+import CaseStudyContainer from '../../components/CaseStudyContainer'
 
 const StyledParagraph = styled.p`
   margin-bottom: 1.5em;
-`;
-
-const StyledContainer = styled.div`
-  padding: 0 80px;
-
-  @media(max-width: 1024px) {
-    padding: 0 40px;
-  }
-
-  @media(max-width: 952px) {
-    padding: 0 24px;
-  }
-
-  @media(max-width: 951px) {
-    padding: 0 144px;
-  }
-
-  @media(max-width: 770px) {
-    padding: 0 24px;
-  }
-
-  @media(max-width: 399px) {
-    padding: 0;
-  }
 `;
 
 const MediaValet = ({ location }) => {
@@ -141,7 +118,7 @@ const MediaValet = ({ location }) => {
         title="MediaValet"
         pathname={location.pathname}
       />
-      <StyledContainer>
+      <CaseStudyContainer>
         <WorkPageHeader
           chevronFixed={imgQuery.chevron.childImageSharp.fixed}
           company="MediaValet"
@@ -294,7 +271,7 @@ const MediaValet = ({ location }) => {
             roadmap include improving the mobile view and providing more tracking.
           </StyledParagraph>
         </ContentContainer>
-      </StyledContainer>
+      </CaseStudyContainer>
     </Layout>
   )
 }

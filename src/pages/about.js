@@ -23,6 +23,10 @@ const StyledDescription = styled.div`
     width: 100vw;
     padding: 0 24px;
   }
+
+  @media(max-width: 400px) {
+    max-height: none;
+  }
 `;
 
 const StyledContainer = styled.div`

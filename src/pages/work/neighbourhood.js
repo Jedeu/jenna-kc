@@ -8,17 +8,10 @@ import ImageWithCaption from '../../components/ImageWithCaption'
 import ImagesFlexContainer from '../../components/ImagesFlexContainer'
 import ContentContainer from '../../components/ContentContainer'
 import WorkPageHeader from "../../components/WorkPageHeader"
+import CaseStudyContainer from '../../components/CaseStudyContainer'
 
 const StyledParagraph = styled.p`
   margin-bottom: 1.5em;
-`;
-
-const StyledContainer = styled.div`
-  padding: 0 80px;
-
-  @media(max-width: 1024px) {
-    padding: 0 40px;
-  }
 `;
 
 const Neighbourhood = ({ location }) => {
@@ -68,7 +61,7 @@ const Neighbourhood = ({ location }) => {
         title="Neighbourhood"
         pathname={location.pathname}
       />
-      <StyledContainer>
+      <CaseStudyContainer>
         <WorkPageHeader
           chevronFixed={imgQuery.chevron.childImageSharp.fixed}
           company="Neighbourhood"
@@ -156,7 +149,7 @@ const Neighbourhood = ({ location }) => {
             of user testing.
           </StyledParagraph>
         </ContentContainer>
-      </StyledContainer>
+      </CaseStudyContainer>
     </Layout>
   )
 }
