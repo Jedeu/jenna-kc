@@ -11,10 +11,6 @@ const Container = styled.div`
   margin-right: auto;
   max-width: 1000px;
 
-  @media(max-width: 951px) {
-    width: 560px;
-  }
-
   @media(max-width: 590px) {
     padding: 0 24px;
   }
