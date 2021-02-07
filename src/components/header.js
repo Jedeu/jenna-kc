@@ -15,13 +15,8 @@ const StyledHeader = styled.header`
 
   @media(max-width: 1024px) {
     padding: 24px 40px;
-  }
-
-  @media(max-width: 1023px) {
-    padding: 24px 0;
     margin-left: auto;
     margin-right: auto;
-    max-width: 560px;
   }
 
   @media(max-width:590px) {
