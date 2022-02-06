@@ -104,7 +104,7 @@ const MediaValet = ({ location }) => {
       }
       chevron: file(relativePath: { eq: "back.png" }) {
           childImageSharp {
-              fixed(width: 6, height: 20) {
+              fixed(width: 6, height: 18) {
                   ...GatsbyImageSharpFixed
               }
           }
