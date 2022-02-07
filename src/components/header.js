@@ -188,6 +188,7 @@ const Header = ({ location }) => {
         to='/work'
         activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
         animate={notOnWorkPage}
+        partiallyActive
       >
         Work
       </StyledLink>
