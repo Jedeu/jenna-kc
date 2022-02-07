@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledContainer = styled.div`
-padding: 0 80px;
+padding: 0 80px 80px;
 
 @media(max-width: 1024px) {
   padding: 0 40px;

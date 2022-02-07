@@ -143,6 +143,20 @@ export const useImages = () => {
           }
         }
       }
+      untitledSection: file(relativePath: { eq: "mediavalet-untitled-section.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      sideMenu: file(relativePath: { eq: "mediavalet-side-menu.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       chevron: file(relativePath: { eq: "back.png" }) {
         childImageSharp {
             fixed(width: 6, height: 16) {

@@ -37,17 +37,27 @@ const StyledCaption = styled.div`
   }
 `;
 
-const ImageWithCaption = ({ source, content, screenshot }) => (
-  <StyledContainer>
-    <StyledImage fluid={source} style={{ width: '100%' }} screenshot={screenshot} />
-    <StyledCaption>{content}</StyledCaption>
-  </StyledContainer>
-)
+const ImageWithCaption = ({ source, content, screenshot, isGif, alt }) => {
+  const renderImgEl = () => {
+    if (isGif) {
+      return <img src={source} alt={alt}/>;
+    }
+    return  <StyledImage fluid={source} style={{ width: '100%' }} screenshot={screenshot} />;
+  }
+  return (
+    <StyledContainer>
+      {renderImgEl()}
+      <StyledCaption>{content}</StyledCaption>
+    </StyledContainer>
+  )
+}
 
 ImageWithCaption.propTypes = {
   content: PropTypes.string.isRequired,
   source: PropTypes.object.isRequired,
   screenshot: PropTypes.bool,
+  isGif: PropTypes.bool,
+  alt: PropTypes.string,
 }
 
 export default ImageWithCaption
