@@ -145,7 +145,7 @@ export const useImages = () => {
       }
       chevron: file(relativePath: { eq: "back.png" }) {
         childImageSharp {
-            fixed(width: 6, height: 18) {
+            fixed(width: 6, height: 16) {
                 ...GatsbyImageSharpFixed
             }
         }
