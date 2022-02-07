@@ -28,7 +28,6 @@ const MediaValet = ({ location }) => {
       />
       <CaseStudyContainer>
         <WorkPageHeader
-          chevronFixed={imgs.chevron.childImageSharp.fixed}
           company="MediaValet"
           title="Product Designer"
         />

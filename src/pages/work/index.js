@@ -100,31 +100,6 @@ const StyledLink = styled(Link)`
 
 const Work = ({ location }) => {
   const imgs = useImages();
-  const coverImgs = useStaticQuery(graphql`
-    query {
-      mediaValet: file(relativePath: { eq: "mediavalet.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 560) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      neighbourhood: file(relativePath: { eq: "neighbourhood.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 560) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      electronicArts: file(relativePath: { eq: "ea.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 560) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
 
   return (
     <Layout location={location}>
@@ -159,12 +134,12 @@ const Work = ({ location }) => {
             <StyledLink to='/work/mediavalet'>Read more about MediaValet</StyledLink>
           </StyledDescription>
           <StyledImgContainer>
-            <Img fluid={coverImgs.mediaValet.childImageSharp.fluid} />
+            <Img fluid={imgs.mediaValet.childImageSharp.fluid} />
           </StyledImgContainer>
         </PicParagraphContainer>
         <PicParagraphContainer>
           <StyledImgContainer>
-            <Img fluid={coverImgs.neighbourhood.childImageSharp.fluid}/>
+            <Img fluid={imgs.neighbourhood.childImageSharp.fluid}/>
           </StyledImgContainer>
           <StyledDescription>
             <StyledParagraph>
@@ -189,7 +164,7 @@ const Work = ({ location }) => {
             <StyledLink to='/work/electronic-arts'>Read more about EA</StyledLink>
           </StyledDescription>
           <StyledImgContainer>
-            <Img fluid={coverImgs.electronicArts.childImageSharp.fluid}/>
+            <Img fluid={imgs.electronicArts.childImageSharp.fluid}/>
           </StyledImgContainer>
         </PicParagraphContainer>
       </StyledContainer>

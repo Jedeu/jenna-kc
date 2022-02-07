@@ -39,11 +39,11 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const WorkPageHeader = ({ chevronFixed, company, title }) => (
+const WorkPageHeader = ({ company, title }) => (
   <Container>
     <StyledLink to='/work'>
-      <Img fixed={chevronFixed} />
-      <span style={{ marginLeft: '6px' }}>Back</span>
+      <span style={{ fontSize: '24px' }}> &lt; </span>
+      <span style={{ marginLeft: '3px' }}>Back</span>
     </StyledLink>
     <span style={{ fontSize: '1.5em' }}>{company}</span>
     <span style={{ fontSize: '1.125em', marginLeft: '16px' }}>{title}</span>
