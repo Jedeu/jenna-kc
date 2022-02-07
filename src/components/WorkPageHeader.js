@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Img from "gatsby-image"
 import { Link } from 'gatsby'
+import backChevron from '../images/back.png'
 
 const Container = styled.div`
   display: flex;

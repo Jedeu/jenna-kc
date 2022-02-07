@@ -139,6 +139,15 @@ const Work = ({ location }) => {
           </StyledImgContainer>
           <StyledDescription>
             <StyledParagraph>
+              As a senior product designer at Procurify, I work closely with product managers and engineering so that users
+              can easily create, track and report on requisitions, purchase orders and expenses.
+            </StyledParagraph>
+            <StyledLink to='/work/procurify'>Read more about Procurify</StyledLink>
+          </StyledDescription>
+        </PicParagraphContainer>
+        <PicParagraphContainer shouldReverse>
+          <StyledDescription>
+            <StyledParagraph>
               Starting from the pen and paper all the way to release, I work with various teams like
               product, marketing and development to get alignment and to make sure the product comes to life in the way that it was envisioned
             </StyledParagraph>
@@ -148,8 +157,14 @@ const Work = ({ location }) => {
             </StyledParagraph>
             <StyledLink to='/work/mediavalet'>Read more about MediaValet</StyledLink>
           </StyledDescription>
+          <StyledImgContainer>
+            <Img fluid={coverImgs.mediaValet.childImageSharp.fluid} />
+          </StyledImgContainer>
         </PicParagraphContainer>
-        <PicParagraphContainer shouldReverse>
+        <PicParagraphContainer>
+          <StyledImgContainer>
+            <Img fluid={coverImgs.neighbourhood.childImageSharp.fluid}/>
+          </StyledImgContainer>
           <StyledDescription>
             <StyledParagraph>
               Neighbourhood was a project aimed to combat senior loneliness by providing a social platform where seniors would participate in an activity group for a period of time.
@@ -159,14 +174,8 @@ const Work = ({ location }) => {
             </StyledParagraph>
             <StyledLink to='/work/neighbourhood'>Read more about Neighbourhood</StyledLink>
           </StyledDescription>
-          <StyledImgContainer>
-            <Img fluid={coverImgs.neighbourhood.childImageSharp.fluid}/>
-          </StyledImgContainer>
         </PicParagraphContainer>
-        <PicParagraphContainer>
-          <StyledImgContainer>
-            <Img fluid={coverImgs.electronicArts.childImageSharp.fluid}/>
-          </StyledImgContainer>
+        <PicParagraphContainer shouldReverse>
           <StyledDescription>
             <p>
               For EA's redesign of the website, they needed to find assets like logos and hero images for all EA games
@@ -178,6 +187,9 @@ const Work = ({ location }) => {
             </p>
             <StyledLink to='/work/electronic-arts'>Read more about EA</StyledLink>
           </StyledDescription>
+          <StyledImgContainer>
+            <Img fluid={coverImgs.electronicArts.childImageSharp.fluid}/>
+          </StyledImgContainer>
         </PicParagraphContainer>
       </StyledContainer>
     </Layout>
