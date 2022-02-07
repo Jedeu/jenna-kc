@@ -157,11 +157,11 @@ const MediaValet = ({ location }) => {
         <ImagesFlexContainer>
           <ImageWithCaption
             source={imgs.untitledSection.childImageSharp.fluid}
-            content='An example of a design review'
+            content='Previous empty state. Action bar is on top of the empty section'
           />
           <ImageWithCaption
             source={imgs.sideMenu.childImageSharp.fluid}
-            content='We were about to present a low fidelity wireframe'
+            content='Updated empty state. Action bar is to the left of the empty section'
           />
         </ImagesFlexContainer>
         <ContentContainer style={{ paddingTop: '13px'}}>
@@ -182,15 +182,16 @@ const MediaValet = ({ location }) => {
         <ImagesFlexContainer style={{ marginTop: '2.5em'}}>
           <ImageWithCaption
             source={addSectionGif}
-            content='An example of a design review'
+            content='Previously there was no motion when a new section is added'
             alt="adding new section"
             isGif
           />
           <ImageWithCaption
             source={deleteSectionGif}
-            content='We were about to present a low fidelity wireframe'
+            content="Motion added to show the newly created section in the user's view"
             alt="deleting new section"
             isGif
+            style={{ minHeight: '90%' }}
           />
         </ImagesFlexContainer>
         <ContentContainer>
@@ -198,6 +199,19 @@ const MediaValet = ({ location }) => {
             Second improvement was to add motion when a new section is added. As you can see in the left gif, if users didn’t have the browser
             set to a high enough height, users were not able to see that a new section has been added. In some cases, this resultedin rage clicking.
             To resolve this, motion was introduced where the page scrolls up to show the new section in the user’s view point.
+          </StyledParagraph>
+        </ContentContainer>
+        <ContentContainer>
+          <div style={{ paddingTop: '13px', fontWeight: 'normal' }}>During Development</div>
+          <StyledParagraph>
+            During development, the high fidelity wireframes are linked to tickets and used for reference in development. As the developers
+            work on the feature, they may have quetsions and small changes may have to be made. I work with developers closely at this stage
+            to make sure the design is being translated properly to development. During the development stage, the product team will also work
+            with the marketing and customer success teams to discuss how the feature will be onboarded and marketed.
+          </StyledParagraph>
+          <StyledParagraph>
+            Branded Portals is currently in in beta and still being actively worked on by the product team and the dev team. Some items on the
+            roadmap include improving the mobile view and providing more tracking.
           </StyledParagraph>
         </ContentContainer>
         <ImagesGridContainer>
@@ -223,20 +237,7 @@ const MediaValet = ({ location }) => {
           />
         </ImagesGridContainer>
         <ContentContainer>
-          <div style={{ paddingTop: '40px', fontWeight: 'normal' }}>During Development</div>
-          <StyledParagraph>
-            During development, the high fidelity wireframes are linked to tickets and used for reference in development. As the developers
-            work on the feature, they may have quetsions and small changes may have to be made. I work with developers closely at this stage
-            to make sure the design is being translated properly to development. During the development stage, the product team will also work
-            with the marketing and customer success teams to discuss how the feature will be onboarded and marketed.
-          </StyledParagraph>
-          <StyledParagraph>
-            Branded Portals is currently in in beta and still being actively worked on by the product team and the dev team. Some items on the
-            roadmap include improving the mobile view and providing more tracking.
-          </StyledParagraph>
-        </ContentContainer>
-        <ContentContainer>
-          <div style={{ paddingTop: '13px', fontWeight: 'normal' }}>Where is branded portals now?</div>
+          <div style={{ paddingTop: '40px', fontWeight: 'normal' }}>Where is branded portals now?</div>
           <StyledParagraph>
             At the time, branded portals was in beta and was being actively worked on. So I was not able to see if the KPI of targeting half of MediaValet clients
             use Branded Portals was realized. However, in terms of usage, 90% of clients in beta created 1 branded portal within the first week of release
