@@ -37,10 +37,10 @@ const StyledCaption = styled.div`
   }
 `;
 
-const ImageWithCaption = ({ source, content, screenshot, isGif, alt }) => {
+const ImageWithCaption = ({ source, content, screenshot, isGif, alt, style }) => {
   const renderImgEl = () => {
     if (isGif) {
-      return <img src={source} alt={alt}/>;
+      return <img style={style} src={source} alt={alt}/>;
     }
     return  <StyledImage fluid={source} style={{ width: '100%' }} screenshot={screenshot} />;
   }
@@ -58,6 +58,7 @@ ImageWithCaption.propTypes = {
   screenshot: PropTypes.bool,
   isGif: PropTypes.bool,
   alt: PropTypes.string,
+  style: PropTypes.object,
 }
 
 export default ImageWithCaption
