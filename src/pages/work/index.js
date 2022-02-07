@@ -126,7 +126,7 @@ const Work = ({ location }) => {
   `)
 
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO
         title="Home"
         pathname={location.pathname}

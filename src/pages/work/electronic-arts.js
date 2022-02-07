@@ -18,7 +18,7 @@ const ElectronicArts = ({ location }) => {
   const imgs = useImages();
 
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO
         title="Electronic Arts"
         pathname={location.pathname}

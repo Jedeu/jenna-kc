@@ -1,7 +1,7 @@
 import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
 import styled from 'styled-components'
 
-import { useImages } from "../../hooks/use-images"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import ImageWithCaption from '../../components/ImageWithCaption'
@@ -15,28 +15,122 @@ const StyledParagraph = styled.p`
   margin-bottom: 1.5em;
 `;
 
-const MediaValet = ({ location }) => {
-  const imgs = useImages();
+const Procurify = ({ location }) => {
+  const imgQuery = useStaticQuery(graphql`
+    query {
+      aboutToPresent: file(relativePath: { eq: "mediavalet-present.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      shareAssets: file(relativePath: { eq: "mediavalet-share-assets.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      gallery: file(relativePath: { eq: "mediavalet-gallery.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      lofi: file(relativePath: { eq: "mediavalet-lo-fi.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      emptyPortal: file(relativePath: { eq: "mediavalet-empty-portal.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      portalSettings: file(relativePath: { eq: "mediavalet-portal-settings.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      noAssets: file(relativePath: { eq: "mediavalet-no-assets.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      iaReview: file(relativePath: { eq: "mediavalet-review.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      penPaper: file(relativePath: { eq: "mediavalet-pen-paper.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      whiteboard: file(relativePath: { eq: "mediavalet-whiteboard.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      iaWhiteboard: file(relativePath: { eq: "mediavalet-ia-whiteboard.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      brandedPortal: file(relativePath: { eq: "mediavalet-branded-portal.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      chevron: file(relativePath: { eq: "back.png" }) {
+          childImageSharp {
+              fixed(width: 6, height: 18) {
+                  ...GatsbyImageSharpFixed
+              }
+          }
+      }
+    }
+  `)
 
   return (
     <Layout location={location}>
       <SEO
-        title="MediaValet"
+        title="Procurify"
         pathname={location.pathname}
       />
       <CaseStudyContainer>
         <WorkPageHeader
-          chevronFixed={imgs.chevron.childImageSharp.fixed}
-          company="MediaValet"
-          title="Product Designer"
+          chevronFixed={imgQuery.chevron.childImageSharp.fixed}
+          company="Procurify"
+          title="Senior Product Designer"
         />
         <ImagesFlexContainer style={{ marginTop: '2.5em'}}>
           <ImageWithCaption
-            source={imgs.iaReview.childImageSharp.fluid}
+            source={imgQuery.iaReview.childImageSharp.fluid}
             content='An example of a design review'
           />
           <ImageWithCaption
-            source={imgs.aboutToPresent.childImageSharp.fluid}
+            source={imgQuery.aboutToPresent.childImageSharp.fluid}
             content='We were about to present a low fidelity wireframe'
           />
         </ImagesFlexContainer>
@@ -72,12 +166,12 @@ const MediaValet = ({ location }) => {
         </ContentContainer>
         <ImagesFlexContainer>
           <ImageWithCaption
-            source={imgs.shareAssets.childImageSharp.fluid}
+            source={imgQuery.shareAssets.childImageSharp.fluid}
             content='What the set up for Web Galleries looked like'
             screenshot
           />
           <ImageWithCaption
-            source={imgs.gallery.childImageSharp.fluid}
+            source={imgQuery.gallery.childImageSharp.fluid}
             content='What users would see once the Web Gallery was shared'
             screenshot
           />
@@ -112,19 +206,19 @@ const MediaValet = ({ location }) => {
         </ContentContainer>
         <ImagesGridContainer>
           <ImageWithCaption
-            source={imgs.lofi.childImageSharp.fluid}
+            source={imgQuery.lofi.childImageSharp.fluid}
             content='An example of a low fidelity prototype. It’s a messy process at the beginning.'
           />
           <ImageWithCaption
-            source={imgs.penPaper.childImageSharp.fluid}
+            source={imgQuery.penPaper.childImageSharp.fluid}
             content='An example of low fidelity prototype. The cutouts were used to show hover states.'
           />
           <ImageWithCaption
-            source={imgs.whiteboard.childImageSharp.fluid}
+            source={imgQuery.whiteboard.childImageSharp.fluid}
             content='Example of a whiteboarding session'
           />
           <ImageWithCaption
-            source={imgs.iaWhiteboard.childImageSharp.fluid}
+            source={imgQuery.iaWhiteboard.childImageSharp.fluid}
             content='Another example of a whiteboarding session'
           />
         </ImagesGridContainer>
@@ -144,22 +238,22 @@ const MediaValet = ({ location }) => {
         </ContentContainer>
         <ImagesGridContainer>
           <ImageWithCaption
-            source={imgs.emptyPortal.childImageSharp.fluid}
+            source={imgQuery.emptyPortal.childImageSharp.fluid}
             content='Start of the set up flow for Branded Portals'
             screenshot
           />
           <ImageWithCaption
-            source={imgs.portalSettings.childImageSharp.fluid}
+            source={imgQuery.portalSettings.childImageSharp.fluid}
             content='Settings page for Branded Portals'
             screenshot
           />
           <ImageWithCaption
-            source={imgs.noAssets.childImageSharp.fluid}
+            source={imgQuery.noAssets.childImageSharp.fluid}
             content='404 page for Branded Portals'
             screenshot
           />
           <ImageWithCaption
-            source={imgs.brandedPortal.childImageSharp.fluid}
+            source={imgQuery.brandedPortal.childImageSharp.fluid}
             content='What Branded Portals looks like to external users'
             screenshot
           />
@@ -182,4 +276,4 @@ const MediaValet = ({ location }) => {
   )
 }
 
-export default MediaValet
+export default Procurify

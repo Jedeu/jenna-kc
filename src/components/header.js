@@ -177,10 +177,10 @@ const StyledHamburger = styled.div`
   `}
 `;
 
-const Header = () => {
+const Header = ({ location }) => {
   const [open, setOpen] = useState(false);
-  const notOnWorkPage = !(window.location.href).match(/\/work/g);
-  const notOnAboutPage = !(window.location.href).match(/\/about/g);
+  const notOnWorkPage = location.pathname !== "/work";
+  const notOnAboutPage = location.pathname !== "/about";
 
   const displayNormalHeader = () => (
     <StyledLinksContainer>

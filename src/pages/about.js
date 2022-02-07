@@ -66,7 +66,7 @@ const About = ({ location }) => {
   `)
 
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO
         title="About me"
         pathname={location.pathname}

@@ -18,7 +18,7 @@ const Neighbourhood = ({ location }) => {
   const imgs = useImages();
 
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO
         title="Neighbourhood"
         pathname={location.pathname}
