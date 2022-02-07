@@ -185,21 +185,21 @@ export const useImages = () => {
           }
         }
       }
-      sideMenu: file(relativePath: { eq: "mediavalet-side-menu.png" }) {
+      procurifyRequestBefore: file(relativePath: { eq: "procurify-request-before.png" }) {
         childImageSharp {
           fluid(maxWidth: 480, quality: 90) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      sideMenu: file(relativePath: { eq: "mediavalet-side-menu.png" }) {
+      procurifyRequestAfter: file(relativePath: { eq: "procurify-request-after.png" }) {
         childImageSharp {
           fluid(maxWidth: 480, quality: 90) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      sideMenu: file(relativePath: { eq: "mediavalet-side-menu.png" }) {
+      procurify: file(relativePath: { eq: "procurify.png" }) {
         childImageSharp {
           fluid(maxWidth: 480, quality: 90) {
             ...GatsbyImageSharpFluid

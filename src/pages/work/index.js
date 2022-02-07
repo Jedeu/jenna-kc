@@ -3,7 +3,7 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 import styled from 'styled-components'
 import Img from "gatsby-image"
 
-
+import { useImages } from "../../hooks/use-images"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import PicParagraphContainer from '../../components/PicParagraphContainer'
@@ -99,6 +99,7 @@ const StyledLink = styled(Link)`
 `;
 
 const Work = ({ location }) => {
+  const imgs = useImages();
   const coverImgs = useStaticQuery(graphql`
     query {
       mediaValet: file(relativePath: { eq: "mediavalet.png" }) {
@@ -135,7 +136,7 @@ const Work = ({ location }) => {
         <StyledGreeting>Hi! My name is Jenna Kuck-Chang I'm a product designer</StyledGreeting>
         <PicParagraphContainer>
           <StyledImgContainer>
-            <Img fluid={coverImgs.mediaValet.childImageSharp.fluid} />
+            <Img fluid={imgs.procurify.childImageSharp.fluid} />
           </StyledImgContainer>
           <StyledDescription>
             <StyledParagraph>

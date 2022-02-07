@@ -1,5 +1,4 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
 import styled from 'styled-components'
 
 import { useImages } from "../../hooks/use-images"
@@ -32,12 +31,12 @@ const Procurify = ({ location }) => {
         />
         <ImagesFlexContainer>
           <ImageWithCaption
-            source={imgs.shareAssets.childImageSharp.fluid}
+            source={imgs.procurifyLofi1.childImageSharp.fluid}
             content='Example of low fidelity prototyping in Miro'
             screenshot
           />
           <ImageWithCaption
-            source={imgs.gallery.childImageSharp.fluid}
+            source={imgs.procurifyLofi2.childImageSharp.fluid}
             content='Another example of low fidelity prototyping in Miro'
             screenshot
           />
@@ -188,12 +187,12 @@ const Procurify = ({ location }) => {
         </ContentContainer>
         <ImagesFlexContainer>
           <ImageWithCaption
-            source={imgs.shareAssets.childImageSharp.fluid}
+            source={imgs.procurifyRequestBefore.childImageSharp.fluid}
             content='Previous request page. Requesters can only fill in vendor name'
             screenshot
           />
           <ImageWithCaption
-            source={imgs.gallery.childImageSharp.fluid}
+            source={imgs.procurifyRequestAfter.childImageSharp.fluid}
             content='Auto PO request page. Requesters can fill in more vendor information if they wish to'
             screenshot
           />
@@ -215,12 +214,12 @@ const Procurify = ({ location }) => {
         </ContentContainer>
         <ImagesFlexContainer>
           <ImageWithCaption
-            source={imgs.shareAssets.childImageSharp.fluid}
+            source={imgs.procurifyApproveBefore.childImageSharp.fluid}
             content='Auto PO approve page. Approvers are told this vendor will be automatically created'
             screenshot
           />
           <ImageWithCaption
-            source={imgs.gallery.childImageSharp.fluid}
+            source={imgs.procurifyApproveAfter.childImageSharp.fluid}
             content='Auto PO approval page. After approvals, approvers are told a PO has been created'
             screenshot
           />
