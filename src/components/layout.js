@@ -11,10 +11,10 @@ import PropTypes from "prop-types"
 import Header from "./header"
 import "./layout.css"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) => {
   return (
     <>
-      <Header />
+      <Header location={location}/>
       <main style={{ maxWidth: '1440px', marginLeft: 'auto', marginRight: 'auto' }}>{children}</main>
     </>
   )
@@ -22,6 +22,7 @@ const Layout = ({ children }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  location: PropTypes.object.isRequired
 }
 
 export default Layout

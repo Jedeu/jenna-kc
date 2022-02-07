@@ -177,29 +177,30 @@ const StyledHamburger = styled.div`
   `}
 `;
 
-const Header = () => {
+const Header = ({ location }) => {
   const [open, setOpen] = useState(false);
+  const notOnWorkPage = location.pathname !== "/work";
+  const notOnAboutPage = location.pathname !== "/about";
 
   const displayNormalHeader = () => (
     <StyledLinksContainer>
       <StyledLink
         to='/work'
         activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
-        partiallyActive={true}
-        animate={true}
+        animate={notOnWorkPage}
       >
         Work
-        </StyledLink>
-      <StyledLink to='/work' animate> &mdash;</StyledLink>
+      </StyledLink>
+      <Link to='/work' style={{ textDecoration: 'none' }}> &mdash;</Link>
 
       <StyledLink
         to='/about'
         activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
-        animate={true}
+        animate={notOnAboutPage}
       >
         About
         </StyledLink>
-      <StyledLink to='/about' animate> &mdash;</StyledLink>
+      <Link to='/about' style={{ textDecoration: 'none' }}> &mdash;</Link>
     </StyledLinksContainer>
   )
 
@@ -221,8 +222,7 @@ const Header = () => {
                 <StyledLink
                   to='/work'
                   activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
-                  partiallyActive={true}
-                  animate={true}
+                  partiallyActive
                 >
                   Work
                 </StyledLink>
@@ -232,8 +232,7 @@ const Header = () => {
               <StyledLink
                 to='/work/mediavalet'
                 activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
-                partiallyActive={true}
-                animate={true}
+                partiallyActive
                 style={{ marginBottom: '8px' }}
               >
                 MediaValet
@@ -241,8 +240,7 @@ const Header = () => {
               <StyledLink
                 to='/work/neighbourhood'
                 activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
-                partiallyActive={true}
-                animate={true}
+                partiallyActive
                 style={{ marginBottom: '8px' }}
               >
                 Neighbourhood
@@ -250,8 +248,7 @@ const Header = () => {
               <StyledLink
                 to='/work/electronic-arts'
                 activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
-                partiallyActive={true}
-                animate={true}
+                partiallyActive
                 style={{ marginBottom: '24px' }}
               >
                 Electronic Arts
@@ -262,7 +259,6 @@ const Header = () => {
               <StyledLink
                 to='/about'
                 activeStyle={{ borderBottom: '2px solid #F5B4A2' }}
-                animate={true}
               >
                 About
               </StyledLink>

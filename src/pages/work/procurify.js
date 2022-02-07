@@ -1,7 +1,7 @@
 import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
 import styled from 'styled-components'
 
-import { useImages } from "../../hooks/use-images"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import ImageWithCaption from '../../components/ImageWithCaption'
@@ -10,35 +10,127 @@ import ImagesGridContainer from '../../components/ImagesGridContainer'
 import ContentContainer from '../../components/ContentContainer'
 import WorkPageHeader from "../../components/WorkPageHeader"
 import CaseStudyContainer from '../../components/CaseStudyContainer'
-import addSectionGif from '../../images/mediavalet-add-section.gif'
-import deleteSectionGif from '../../images/mediavalet-delete-section.gif'
 
 const StyledParagraph = styled.p`
   margin-bottom: 1.5em;
 `;
 
-const MediaValet = ({ location }) => {
-  const imgs = useImages();
+const Procurify = ({ location }) => {
+  const imgQuery = useStaticQuery(graphql`
+    query {
+      aboutToPresent: file(relativePath: { eq: "mediavalet-present.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      shareAssets: file(relativePath: { eq: "mediavalet-share-assets.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      gallery: file(relativePath: { eq: "mediavalet-gallery.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      lofi: file(relativePath: { eq: "mediavalet-lo-fi.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      emptyPortal: file(relativePath: { eq: "mediavalet-empty-portal.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      portalSettings: file(relativePath: { eq: "mediavalet-portal-settings.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      noAssets: file(relativePath: { eq: "mediavalet-no-assets.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      iaReview: file(relativePath: { eq: "mediavalet-review.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      penPaper: file(relativePath: { eq: "mediavalet-pen-paper.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      whiteboard: file(relativePath: { eq: "mediavalet-whiteboard.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      iaWhiteboard: file(relativePath: { eq: "mediavalet-ia-whiteboard.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      brandedPortal: file(relativePath: { eq: "mediavalet-branded-portal.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      chevron: file(relativePath: { eq: "back.png" }) {
+          childImageSharp {
+              fixed(width: 6, height: 18) {
+                  ...GatsbyImageSharpFixed
+              }
+          }
+      }
+    }
+  `)
 
   return (
     <Layout location={location}>
       <SEO
-        title="MediaValet"
+        title="Procurify"
         pathname={location.pathname}
       />
       <CaseStudyContainer>
         <WorkPageHeader
-          chevronFixed={imgs.chevron.childImageSharp.fixed}
-          company="MediaValet"
-          title="Product Designer"
+          chevronFixed={imgQuery.chevron.childImageSharp.fixed}
+          company="Procurify"
+          title="Senior Product Designer"
         />
         <ImagesFlexContainer style={{ marginTop: '2.5em'}}>
           <ImageWithCaption
-            source={imgs.iaReview.childImageSharp.fluid}
+            source={imgQuery.iaReview.childImageSharp.fluid}
             content='An example of a design review'
           />
           <ImageWithCaption
-            source={imgs.aboutToPresent.childImageSharp.fluid}
+            source={imgQuery.aboutToPresent.childImageSharp.fluid}
             content='We were about to present a low fidelity wireframe'
           />
         </ImagesFlexContainer>
@@ -71,19 +163,15 @@ const MediaValet = ({ location }) => {
           <div>- Be able to customize by creating sections, having a section header and description text fields</div>
           <div>- Changing the design so that assets would be displayed more visually</div>
           <div style={{ marginBottom: '40px' }}>- Be responsive so external users can view it on different devices</div>
-
-          <div>Some of KPIs tracked were:</div>
-          <div>- Monthly number of Branded Portals created, especially compared the number of web galleries created</div>
-          <div style={{ marginBottom: '40px' }}>- Half of client base to have Branded Portals activated</div>
         </ContentContainer>
         <ImagesFlexContainer>
           <ImageWithCaption
-            source={imgs.shareAssets.childImageSharp.fluid}
+            source={imgQuery.shareAssets.childImageSharp.fluid}
             content='What the set up for Web Galleries looked like'
             screenshot
           />
           <ImageWithCaption
-            source={imgs.gallery.childImageSharp.fluid}
+            source={imgQuery.gallery.childImageSharp.fluid}
             content='What users would see once the Web Gallery was shared'
             screenshot
           />
@@ -118,19 +206,19 @@ const MediaValet = ({ location }) => {
         </ContentContainer>
         <ImagesGridContainer>
           <ImageWithCaption
-            source={imgs.lofi.childImageSharp.fluid}
+            source={imgQuery.lofi.childImageSharp.fluid}
             content='An example of a low fidelity prototype. It’s a messy process at the beginning.'
           />
           <ImageWithCaption
-            source={imgs.penPaper.childImageSharp.fluid}
+            source={imgQuery.penPaper.childImageSharp.fluid}
             content='An example of low fidelity prototype. The cutouts were used to show hover states.'
           />
           <ImageWithCaption
-            source={imgs.whiteboard.childImageSharp.fluid}
+            source={imgQuery.whiteboard.childImageSharp.fluid}
             content='Example of a whiteboarding session'
           />
           <ImageWithCaption
-            source={imgs.iaWhiteboard.childImageSharp.fluid}
+            source={imgQuery.iaWhiteboard.childImageSharp.fluid}
             content='Another example of a whiteboarding session'
           />
         </ImagesGridContainer>
@@ -138,8 +226,9 @@ const MediaValet = ({ location }) => {
           <div style={{ paddingTop: '40px', fontWeight: 'normal' }}>High Fidelity Prototyping</div>
           <StyledParagraph>
             Once there is aligned on one or two solutions, I'll move onto high fidelity prototyping. MediaValet uses Sketch for wireframing
-            and InVision for prototyping. At this stage, it's all in the details. The interactive prototypes at this stage are used by various
-            teams to demo to current and potential clients and the final prototype is used in the developer hand off process.
+            and InVision for prototyping. At this stage, it's all in the details and I try to be as pixel-perfect as possible. The interactive
+            prototypes at this stage are used by various teams to demo to current and potential clients and the final prototype is used in the
+            developer hand off process.
           </StyledParagraph>
           <StyledParagraph>
             One of the goals for Branded Portals was to be a more visual way of sharing assets. To accomplish this, a mini design system was
@@ -147,77 +236,24 @@ const MediaValet = ({ location }) => {
             and used throughtout Branded Portals.
           </StyledParagraph>
         </ContentContainer>
-        <ContentContainer>
-          <div style={{ paddingTop: '13px', fontWeight: 'normal' }}>Findings from User Testing</div>
-          <StyledParagraph>
-            High fidelity prototypes were used in user testing as well.
-            We were able to talk to about 5 customers and there were 2 areas of common feedback
-          </StyledParagraph>
-        </ContentContainer>
-        <ImagesFlexContainer>
-          <ImageWithCaption
-            source={imgs.untitledSection.childImageSharp.fluid}
-            content='An example of a design review'
-          />
-          <ImageWithCaption
-            source={imgs.sideMenu.childImageSharp.fluid}
-            content='We were about to present a low fidelity wireframe'
-          />
-        </ImagesFlexContainer>
-        <ContentContainer style={{ paddingTop: '13px'}}>
-          <StyledParagraph>
-            First was improvements to the empty state. Some notes here the dotted line are items that come up on hover but
-            I’ve put them all in one screen for convenience.
-          </StyledParagraph>
-          <StyledParagraph>
-            With the first iteration seen in the first image above, most users we interviewed had issues seeing the action bar
-            highlighted in blue. This was especially hard to discover for the top section because it overlapped with where the
-            hero image would be. So we moved it to the left where we knew there was always white space.
-          </StyledParagraph>
-          <StyledParagraph>
-            The other aspect users had issues with was the ‘Add assets to your Section’ text. Even with the big +, most users didn’t know
-            what was required to add assets. So we changed the text to include ‘Click here’ and updated the icon to better reflect this action.
-          </StyledParagraph>
-        </ContentContainer>
-        <ImagesFlexContainer style={{ marginTop: '2.5em'}}>
-          <ImageWithCaption
-            source={addSectionGif}
-            content='An example of a design review'
-            alt="adding new section"
-            isGif
-          />
-          <ImageWithCaption
-            source={deleteSectionGif}
-            content='We were about to present a low fidelity wireframe'
-            alt="deleting new section"
-            isGif
-          />
-        </ImagesFlexContainer>
-        <ContentContainer>
-          <StyledParagraph>
-            Second improvement was to add motion when a new section is added. As you can see in the left gif, if users didn’t have the browser
-            set to a high enough height, users were not able to see that a new section has been added. In some cases, this resultedin rage clicking.
-            To resolve this, motion was introduced where the page scrolls up to show the new section in the user’s view point.
-          </StyledParagraph>
-        </ContentContainer>
         <ImagesGridContainer>
           <ImageWithCaption
-            source={imgs.emptyPortal.childImageSharp.fluid}
+            source={imgQuery.emptyPortal.childImageSharp.fluid}
             content='Start of the set up flow for Branded Portals'
             screenshot
           />
           <ImageWithCaption
-            source={imgs.portalSettings.childImageSharp.fluid}
+            source={imgQuery.portalSettings.childImageSharp.fluid}
             content='Settings page for Branded Portals'
             screenshot
           />
           <ImageWithCaption
-            source={imgs.noAssets.childImageSharp.fluid}
+            source={imgQuery.noAssets.childImageSharp.fluid}
             content='404 page for Branded Portals'
             screenshot
           />
           <ImageWithCaption
-            source={imgs.brandedPortal.childImageSharp.fluid}
+            source={imgQuery.brandedPortal.childImageSharp.fluid}
             content='What Branded Portals looks like to external users'
             screenshot
           />
@@ -235,22 +271,9 @@ const MediaValet = ({ location }) => {
             roadmap include improving the mobile view and providing more tracking.
           </StyledParagraph>
         </ContentContainer>
-        <ContentContainer>
-          <div style={{ paddingTop: '13px', fontWeight: 'normal' }}>Where is branded portals now?</div>
-          <StyledParagraph>
-            At the time, branded portals was in beta and was being actively worked on. So I was not able to see if the KPI of targeting half of MediaValet clients
-            use Branded Portals was realized. However, in terms of usage, 90% of clients in beta created 1 branded portal within the first week of release
-            and in the first 3 months of the beta release, users created 10 times as many branded portals as they did web galleries on average.
-          </StyledParagraph>
-          <StyledParagraph>
-            There was very positive qualitative feedback as well and we heard customers give feedback such as
-            “We’ve heard numerous positive things … about how user friendly the interface is” and “Another home run with branded portals…
-            this is the missing piece of the puzzle”.
-          </StyledParagraph>
-        </ContentContainer>
       </CaseStudyContainer>
     </Layout>
   )
 }
 
-export default MediaValet
+export default Procurify
