@@ -5,7 +5,7 @@ const StyledImagesGrid = styled.div`
   display: grid;
   grid-template-columns: 480px 480px;
   grid-template-rows: 386px 386px;
-  grid-row-gap: 24px;
+  grid-row-gap: 40px;
   grid-column-gap: 40px;
   margin-left: auto;
   margin-right: auto;
