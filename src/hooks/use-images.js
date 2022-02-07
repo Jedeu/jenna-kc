@@ -206,6 +206,27 @@ export const useImages = () => {
           }
         }
       }
+      mediaValet: file(relativePath: { eq: "mediavalet.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 560) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      neighbourhood: file(relativePath: { eq: "neighbourhood.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 560) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      electronicArts: file(relativePath: { eq: "ea.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 560) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       chevron: file(relativePath: { eq: "back.png" }) {
         childImageSharp {
             fixed(width: 6, height: 16) {

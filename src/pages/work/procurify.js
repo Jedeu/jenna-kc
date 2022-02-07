@@ -25,7 +25,6 @@ const Procurify = ({ location }) => {
       />
       <CaseStudyContainer>
         <WorkPageHeader
-          chevronFixed={imgs.chevron.childImageSharp.fixed}
           company="Procurify"
           title="Senior Product Designer"
         />

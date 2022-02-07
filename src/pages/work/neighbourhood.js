@@ -25,7 +25,6 @@ const Neighbourhood = ({ location }) => {
       />
       <CaseStudyContainer>
         <WorkPageHeader
-          chevronFixed={imgs.chevron.childImageSharp.fixed}
           company="Neighbourhood"
           title="UX/UI Designer"
         />

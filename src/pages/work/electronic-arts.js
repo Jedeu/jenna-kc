@@ -25,7 +25,6 @@ const ElectronicArts = ({ location }) => {
       />
         <CaseStudyContainer>
           <WorkPageHeader
-            chevronFixed={imgs.chevron.childImageSharp.fixed}
             company="Electronic Arts"
             title="Junior Web Designer"
           />
