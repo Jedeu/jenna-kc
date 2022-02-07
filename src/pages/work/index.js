@@ -3,7 +3,7 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 import styled from 'styled-components'
 import Img from "gatsby-image"
 
-
+import { useImages } from "../../hooks/use-images"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import PicParagraphContainer from '../../components/PicParagraphContainer'
@@ -99,6 +99,7 @@ const StyledLink = styled(Link)`
 `;
 
 const Work = ({ location }) => {
+  const imgs = useImages();
   const coverImgs = useStaticQuery(graphql`
     query {
       mediaValet: file(relativePath: { eq: "mediavalet.png" }) {
@@ -135,8 +136,17 @@ const Work = ({ location }) => {
         <StyledGreeting>Hi! My name is Jenna Kuck-Chang I'm a product designer</StyledGreeting>
         <PicParagraphContainer>
           <StyledImgContainer>
-            <Img fluid={coverImgs.mediaValet.childImageSharp.fluid} />
+            <Img fluid={imgs.procurify.childImageSharp.fluid} />
           </StyledImgContainer>
+          <StyledDescription>
+            <StyledParagraph>
+              As a senior product designer at Procurify, I work closely with product managers and engineering so that users
+              can easily create, track and report on requisitions, purchase orders and expenses.
+            </StyledParagraph>
+            <StyledLink to='/work/procurify'>Read more about Procurify</StyledLink>
+          </StyledDescription>
+        </PicParagraphContainer>
+        <PicParagraphContainer shouldReverse>
           <StyledDescription>
             <StyledParagraph>
               Starting from the pen and paper all the way to release, I work with various teams like
@@ -148,8 +158,14 @@ const Work = ({ location }) => {
             </StyledParagraph>
             <StyledLink to='/work/mediavalet'>Read more about MediaValet</StyledLink>
           </StyledDescription>
+          <StyledImgContainer>
+            <Img fluid={coverImgs.mediaValet.childImageSharp.fluid} />
+          </StyledImgContainer>
         </PicParagraphContainer>
-        <PicParagraphContainer shouldReverse>
+        <PicParagraphContainer>
+          <StyledImgContainer>
+            <Img fluid={coverImgs.neighbourhood.childImageSharp.fluid}/>
+          </StyledImgContainer>
           <StyledDescription>
             <StyledParagraph>
               Neighbourhood was a project aimed to combat senior loneliness by providing a social platform where seniors would participate in an activity group for a period of time.
@@ -159,14 +175,8 @@ const Work = ({ location }) => {
             </StyledParagraph>
             <StyledLink to='/work/neighbourhood'>Read more about Neighbourhood</StyledLink>
           </StyledDescription>
-          <StyledImgContainer>
-            <Img fluid={coverImgs.neighbourhood.childImageSharp.fluid}/>
-          </StyledImgContainer>
         </PicParagraphContainer>
-        <PicParagraphContainer>
-          <StyledImgContainer>
-            <Img fluid={coverImgs.electronicArts.childImageSharp.fluid}/>
-          </StyledImgContainer>
+        <PicParagraphContainer shouldReverse>
           <StyledDescription>
             <p>
               For EA's redesign of the website, they needed to find assets like logos and hero images for all EA games
@@ -178,6 +188,9 @@ const Work = ({ location }) => {
             </p>
             <StyledLink to='/work/electronic-arts'>Read more about EA</StyledLink>
           </StyledDescription>
+          <StyledImgContainer>
+            <Img fluid={coverImgs.electronicArts.childImageSharp.fluid}/>
+          </StyledImgContainer>
         </PicParagraphContainer>
       </StyledContainer>
     </Layout>

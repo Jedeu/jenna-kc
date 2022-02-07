@@ -6,6 +6,8 @@ import PropTypes from "prop-types"
 const StyledImage = styled(Img)`
   position: relative;
   display: inline-block;
+  width: 100%;
+  height: 100%;
 
   ${({ screenshot }) => screenshot && `border: 1px solid #B7B7B7;`}
 `;
@@ -42,7 +44,7 @@ const ImageWithCaption = ({ source, content, screenshot, isGif, alt, style }) =>
     if (isGif) {
       return <img style={style} src={source} alt={alt}/>;
     }
-    return  <StyledImage fluid={source} style={{ width: '100%' }} screenshot={screenshot} />;
+    return  <StyledImage fluid={source} style={style} screenshot={screenshot} />;
   }
   return (
     <StyledContainer>

@@ -53,10 +53,10 @@ const MediaValet = ({ location }) => {
             I've worked on a lot of features in my 4-ish years at MediaValet. The design process for features are similar so I will go over
             it using a feature called Branded Portals as an example. Branded portals allows MediaValet users to curate and customize
             a collection of assets for external users that do not have access to these assets.
-        </StyledParagraph>
+          </StyledParagraph>
 
-        <div style={{ fontWeight: 'normal' }}>Research & Defining the Goal</div>
-        <StyledParagraph>
+          <div style={{ fontWeight: 'normal' }}>Research & Defining the Goal</div>
+          <StyledParagraph>
             The first step of the design process at MediaValet is to gather data to figure out what the problem is. We conduct
             competitive analyses and talk to the sales, customer success, and support teams. If this is an improvement on an existing feature,
             we look at product data usage to identify current user flows and any drop off points. Branded Portals came about because users were
@@ -158,10 +158,13 @@ const MediaValet = ({ location }) => {
           <ImageWithCaption
             source={imgs.untitledSection.childImageSharp.fluid}
             content='Previous empty state. Action bar is on top of the empty section'
+            screenshot
           />
           <ImageWithCaption
             source={imgs.sideMenu.childImageSharp.fluid}
             content='Updated empty state. Action bar is to the left of the empty section'
+            screenshot
+            style={{ 'minHeight': '90%' }}
           />
         </ImagesFlexContainer>
         <ContentContainer style={{ paddingTop: '13px'}}>

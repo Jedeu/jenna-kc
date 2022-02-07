@@ -157,6 +157,55 @@ export const useImages = () => {
           }
         }
       }
+      procurifyApproveAfter: file(relativePath: { eq: "procurify-approve-after.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      procurifyApproveBefore: file(relativePath: { eq: "procurify-approve-before.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      procurifyLofi1: file(relativePath: { eq: "procurify-lofi-1.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      procurifyLofi2: file(relativePath: { eq: "procurify-lofi-2.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      procurifyRequestBefore: file(relativePath: { eq: "procurify-request-before.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      procurifyRequestAfter: file(relativePath: { eq: "procurify-request-after.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      procurify: file(relativePath: { eq: "procurify.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       chevron: file(relativePath: { eq: "back.png" }) {
         childImageSharp {
             fixed(width: 6, height: 16) {
