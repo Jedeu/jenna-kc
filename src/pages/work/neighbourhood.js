@@ -1,7 +1,7 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
 import styled from 'styled-components'
 
+import { useImages } from "../../hooks/use-images"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import ImageWithCaption from '../../components/ImageWithCaption'
@@ -15,45 +15,7 @@ const StyledParagraph = styled.p`
 `;
 
 const Neighbourhood = ({ location }) => {
-  const imgQuery = useStaticQuery(graphql`
-    query {
-      landing: file(relativePath: { eq: "neighbourhood-landing.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 3080 quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      howItWorks: file(relativePath: { eq: "neighbourhood-how-it-works.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 3080 quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      pods: file(relativePath: { eq: "neighbourhood-pods.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 3080 quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      selectedPod: file(relativePath: { eq: "neighbourhood-selected-pod.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 3080 quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      chevron: file(relativePath: { eq: "back.png" }) {
-        childImageSharp {
-            fixed(width: 6, height: 18) {
-                ...GatsbyImageSharpFixed
-            }
-        }
-      }
-    }
-  `)
+  const imgs = useImages();
 
   return (
     <Layout>
@@ -63,18 +25,18 @@ const Neighbourhood = ({ location }) => {
       />
       <CaseStudyContainer>
         <WorkPageHeader
-          chevronFixed={imgQuery.chevron.childImageSharp.fixed}
+          chevronFixed={imgs.chevron.childImageSharp.fixed}
           company="Neighbourhood"
           title="UX/UI Designer"
         />
         <ImagesFlexContainer style={{ marginTop: '2.5em' }}>
           <ImageWithCaption
-            source={imgQuery.landing.childImageSharp.fluid}
+            source={imgs.landing.childImageSharp.fluid}
             content='Homepage'
             screenshot
           />
           <ImageWithCaption
-            source={imgQuery.howItWorks.childImageSharp.fluid}
+            source={imgs.howItWorks.childImageSharp.fluid}
             content='How It Works page'
             screenshot
           />
@@ -118,12 +80,12 @@ const Neighbourhood = ({ location }) => {
         </ContentContainer>
         <ImagesFlexContainer>
           <ImageWithCaption
-            source={imgQuery.pods.childImageSharp.fluid}
+            source={imgs.pods.childImageSharp.fluid}
             content='Original PODS page design'
             screenshot
           />
           <ImageWithCaption
-            source={imgQuery.selectedPod.childImageSharp.fluid}
+            source={imgs.selectedPod.childImageSharp.fluid}
             content='PODS pages design after user testing'
             screenshot
           />

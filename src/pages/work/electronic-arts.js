@@ -1,7 +1,7 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
 import styled from 'styled-components'
 
+import { useImages } from "../../hooks/use-images"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import ImageWithCaption from '../../components/ImageWithCaption'
@@ -15,45 +15,7 @@ const StyledParagraph = styled.p`
 `;
 
 const ElectronicArts = ({ location }) => {
-  const imgQuery = useStaticQuery(graphql`
-    query {
-      needForSpeed: file(relativePath: { eq: "ea-need-for-speed.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 480 quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      peggleBlast: file(relativePath: { eq: "ea-peggle-blast.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 480 quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      sims: file(relativePath: { eq: "ea-sims.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 480 quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      bejeweled: file(relativePath: { eq: "ea-bejeweled.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 480 quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      chevron: file(relativePath: { eq: "back.png" }) {
-        childImageSharp {
-            fixed(width: 6, height: 18) {
-                ...GatsbyImageSharpFixed
-            }
-        }
-      }
-    }
-  `)
+  const imgs = useImages();
 
   return (
     <Layout>
@@ -63,18 +25,18 @@ const ElectronicArts = ({ location }) => {
       />
         <CaseStudyContainer>
           <WorkPageHeader
-            chevronFixed={imgQuery.chevron.childImageSharp.fixed}
+            chevronFixed={imgs.chevron.childImageSharp.fixed}
             company="Electronic Arts"
             title="Junior Web Designer"
           />
           <ImagesFlexContainer style={{ marginTop: '2.5em' }}>
             <ImageWithCaption
-              source={imgQuery.needForSpeed.childImageSharp.fluid}
+              source={imgs.needForSpeed.childImageSharp.fluid}
               content='I retouched the logos shown above'
               screenshot
             />
             <ImageWithCaption
-              source={imgQuery.peggleBlast.childImageSharp.fluid}
+              source={imgs.peggleBlast.childImageSharp.fluid}
               content='Example of a hero image I worked on'
               screenshot
             />
@@ -111,12 +73,12 @@ const ElectronicArts = ({ location }) => {
           </ContentContainer>
           <ImagesFlexContainer>
             <ImageWithCaption
-              source={imgQuery.sims.childImageSharp.fluid}
+              source={imgs.sims.childImageSharp.fluid}
               content='Example of a background I worked on'
               screenshot
             />
             <ImageWithCaption
-              source={imgQuery.bejeweled.childImageSharp.fluid}
+              source={imgs.bejeweled.childImageSharp.fluid}
               content='Another example of a hero image I worked on'
               screenshot
             />
