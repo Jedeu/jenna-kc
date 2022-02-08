@@ -100,18 +100,18 @@ const Procurify = ({ location }) => {
           </StyledParagraph>
           <div>Through talking to 10 customers, we knew:</div>
           <div>
-            - Requesters or Financial Controllers manually create a PO in Procurify after final approval is given for the sole
-            purpose of ensuring spend documentation and allowing the invoice processing steps to continue
+            - After final approval is given on a RFO, Requesters or Financial Controllers manually create a PO
+            for the sole purpose of ensuring spend documentation and allowing invoice processing steps to continue
           </div>
           <div>
-            - Some customers may not see the Request for Order and the purchase order as separate steps
+            - Some customers may not see the request for order and the purchase order as separate steps
           </div>
           <div>
             - Some customers may not use or want to create POs at all
           </div>
           <div style={{ marginBottom: '40px' }}>
             - Because an advanced license is required to create POs in Procurify, this role is usually given
-            to one or two people and this can be very time consuming task
+            to one or two people. This can be very time consuming task
           </div>
           <StyledParagraph>
             This also ruled out a possible solution, which was to get rid of POs altogether. It’s common for wholesale and construction
@@ -123,31 +123,29 @@ const Procurify = ({ location }) => {
         <ContentContainer>
           <div style={{ fontWeight: 'normal' }}>The Solution So Far</div>
           <StyledParagraph>
-            Procurify’s spend capture process can be summarized in in 4 high level steps. A request for order is created (Request),
+            Procurify’s spend capture process can be summarized in 4 high level steps. A request for order is created (Request),
             it is approved (Approvals), a purchase order is created and goods and services are purchased (Procure) and marked as received (Receive).
-            To automatically create a PO, all necessary information needs be captured when the request for order is approved (Approvals).
+            To automatically create a PO, all necessary information needs to be captured when the request for order is approved (Approvals).
             This information included detailed item information which comes from Request and vendor information which comes from Request if the
             vendor already exists in the system or from Procure if the vendor has to be created.
           </StyledParagraph>
           <StyledParagraph>
-            This is the biggest challenge with auto PO creation. For a PO to be created before the procurement step in Procurify,
+            This is the biggest challenge with auto PO creation: for a PO to be created before the procurement step in Procurify,
             the vendor has to exist. But the only place where this is possible is through the process of manually creating a PO in Procure.
             This is in direct conflict with the goal of auto PO creation which is to keep users out of Procure as much as possible.
           </StyledParagraph>
           <StyledParagraph>
-            This is not an issue for customers who have dedicated purchasing teams since they have a dedicated team responsible
-            for having this information. Now that we want to skip this step, it wasn’t clear who would or should have this information and
-            how much vendor information they would have.
+            This is not an issue for customers who have dedicated purchasing teams responsible for having this information.
           </StyledParagraph>
           <StyledParagraph>
-            The solution so far had been to introduce a setting that allows approvers to create vendors during the approval process
+            The solution so far had been to introduce a setting that allows approvers to create vendors during the approval process.
           </StyledParagraph>
           <div>Some common feedback on this solution included:</div>
           <div>
             - Low confidence if approvers will have the necessary information to explicitly create a vendor
           </div>
           <div>
-            - How much vendor information approvers varied a lot from customer to customer
+            - How much vendor information approvers have varied a lot from customer to customer
           </div>
           <div style={{ marginBottom: '40px' }}>
             - The vendor vetting and creation process also varies a lot from customer to customer.
@@ -164,13 +162,13 @@ const Procurify = ({ location }) => {
         <ContentContainer>
           <div style={{ fontWeight: 'normal' }}>Changes to the solution & more user interviews</div>
           <StyledParagraph>
-            With this in mind, I proposed 2 changes.
+            With this in mind, I proposed 2 changes:
           </StyledParagraph>
           <StyledParagraph>
             1. Expose more vendor information that can be filled by the Requester
           </StyledParagraph>
           <StyledParagraph>
-            Requesters will now be able to optionally fill in more information vendor information. The input fields are
+            Requesters will now be able to optionally fill in more vendor information. The input fields are
             the same as the vendor creation form in ‘Procure’. This allows us to capture more information about the vendor and
             fill out more fields in an auto-created PO whenever possible.
           </StyledParagraph>
@@ -245,7 +243,7 @@ const Procurify = ({ location }) => {
         <ContentContainer>
           <div style={{ fontWeight: 'normal' }}>Metrics & What's Next</div>
           <StyledParagraph>
-            Auto PO was released in June of 2021. We forecasted that within the first 12 months, 40-50% of out customers
+            Auto PO was released in June of 2021. We forecasted that within the first 12 months, 40-50% of our customers
             (~200-250 customers) would have adopted this feature. As of writing this case study, we are 8 months in and we
             have about 80 customers, which is 32-40% of the target.
           </StyledParagraph>
